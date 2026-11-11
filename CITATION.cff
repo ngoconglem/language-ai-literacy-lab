@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Close & Distant: A critical text-as-data lab"
+title: "Language & AI Literacy Lab: Linguistic analysis of human and AI writing"
 authors:
   - family-names: Ngo
     given-names: Cong
@@ -8,5 +8,5 @@ authors:
 version: 0.1.0
 date-released: 2026-11-11
 license: MIT
-repository-code: "https://github.com/ngoconglem/close-and-distant"
-keywords: [corpus linguistics, stylometry, digital humanities, large language models, AI detection, academic integrity]
+repository-code: "https://github.com/ngoconglem/language-ai-literacy-lab"
+keywords: [AI literacy, applied linguistics, corpus linguistics, stylometry, digital humanities, large language models, AI detection, academic integrity]

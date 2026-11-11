@@ -127,7 +127,7 @@ export default function Teach() {
     <>
       <h1>Teach with it</h1>
       <p className="lede">
-        Close &amp; Distant is free, needs no login and works on a projector or students' own laptops. Below are ready-to-run session plans you
+        The Language &amp; AI Literacy Lab is free, needs no login and works on a projector or students' own laptops. Below are ready-to-run session plans you
         can adapt, and notes on using your own texts.
       </p>
 
@@ -209,7 +209,7 @@ export default function Teach() {
           <a href={REPO_URL}>repository</a> and edit <code>scripts/prepare_data.py</code>; the README explains the steps.
         </p>
         <h3>How do I cite it?</h3>
-        <p className="small">Ngo, C. (2026). Close &amp; Distant: A critical text-as-data lab [Computer software]. {REPO_URL}</p>
+        <p className="small">Ngo, C. (2026). Language &amp; AI Literacy Lab: Linguistic analysis of human and AI writing [Computer software]. {REPO_URL}</p>
         <h3>Found a problem or have an idea?</h3>
         <p>
           Open an issue on <a href={`${REPO_URL}/issues`}>GitHub</a>.

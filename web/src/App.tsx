@@ -48,7 +48,7 @@ export default function App() {
       teach: "Teach with it",
       about: "About & data",
     };
-    document.title = titles[page] ? `${titles[page]} · Close & Distant` : "Close & Distant: reading human and machine text";
+    document.title = titles[page] ? `${titles[page]} · Language & AI Literacy Lab` : "Language & AI Literacy Lab: Linguistic analysis of human and AI writing";
   }, [page]);
 
   return (
@@ -56,7 +56,7 @@ export default function App() {
       <header className="topbar">
         <div className="shell">
           <a className="wordmark" href="#">
-            Close &amp; <span>Distant</span>
+            Language &amp; <span>AI Literacy</span> Lab
           </a>
           <nav className="nav" aria-label="Main">
             {NAV.map((n) => (
@@ -80,7 +80,7 @@ export default function App() {
       <footer>
         <div className="shell">
           <span>
-            Close &amp; Distant, an open text-as-data lab by{" "}
+            Language &amp; AI Literacy Lab, an open resource by{" "}
             <a href="https://research.monash.edu/en/persons/cong-ngo/">Dr Cong Ngo</a>. Code MIT; data under their own licences.
           </span>
           <span>

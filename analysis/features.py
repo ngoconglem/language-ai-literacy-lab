@@ -1,4 +1,4 @@
-"""Reference implementation of every measure shown in the Close & Distant web app.
+"""Reference implementation of every measure shown in the Language & AI Literacy Lab web app.
 
 The TypeScript code in web/src/lib/text.ts mirrors these functions one-to-one, and
 tests/compare_outputs.py checks that both produce the same numbers.

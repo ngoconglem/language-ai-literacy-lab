@@ -1,4 +1,4 @@
-"""Build the corpora used by the Close & Distant web app.
+"""Build the corpora used by the Language & AI Literacy Lab web app.
 
 Outputs (in web/public/data/):
   essays.json      human (ELLIPSE) and LLM essays on two shared prompts

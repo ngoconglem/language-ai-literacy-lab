@@ -31,7 +31,7 @@ TEAL, OCHRE, INK = "#008f86", "#b07d12", "#1c2b3a"
 
 NOTEBOOKS = {
     "compare_and_detection.ipynb": [
-        ("md", "# Compare and detection\n\nReproduces the **Compare** and **Why detection fails** pages of Close & Distant. "
+        ("md", "# Compare and detection\n\nReproduces the **Compare** and **Why detection fails** pages of the Language & AI Literacy Lab. "
                "Every function used here lives in `analysis/features.py`, which mirrors the browser code."),
         ("code", SETUP),
         ("md", "## Style profile of every essay"),

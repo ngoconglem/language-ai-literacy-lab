@@ -97,7 +97,7 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
     const url = URL.createObjectURL(new Blob([csv()], { type: "text/csv" }));
     const link = document.createElement("a");
     link.href = url;
-    link.download = "close-and-distant-measures.csv";
+    link.download = "language-ai-literacy-lab-measures.csv";
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };

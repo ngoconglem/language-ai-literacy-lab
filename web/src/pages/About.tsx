@@ -6,7 +6,7 @@ export default function About() {
     <div className="prose">
       <h1>About the data and methods</h1>
       <p className="lede">
-        Close &amp; Distant is a teaching and research tool for critical, transparent text analysis. It runs entirely in your browser:
+        The Language &amp; AI Literacy Lab is a teaching and research resource for building critical AI literacy through transparent linguistic analysis. It runs entirely in your browser:
         nothing you paste is sent anywhere.
       </p>
 
@@ -116,7 +116,7 @@ export default function About() {
         <a href="https://ngoconglem.com">ngoconglem.com</a>.
       </p>
       <h3>How to cite</h3>
-      <p className="small">Ngo, C. (2026). <em>Close &amp; Distant: A critical text-as-data lab</em> [Computer software]. {REPO_URL}</p>
+      <p className="small">Ngo, C. (2026). <em>Language &amp; AI Literacy Lab: Linguistic analysis of human and AI writing</em> [Computer software]. {REPO_URL}</p>
 
       <h2>References</h2>
       <ul className="small">
