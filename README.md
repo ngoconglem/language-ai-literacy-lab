@@ -52,7 +52,7 @@ cd web && npm install && npm run dev
 
 ## Deploying
 
-The site is a static Vite + React build. On Vercel, import the repository and keep the defaults: `vercel.json` builds `web/` and serves `web/dist`.
+The site is a static Vite + React build in `web/`. On Vercel, import the repository, set the Root Directory to `web` and keep the Vite preset.
 
 ## Limitations
 
