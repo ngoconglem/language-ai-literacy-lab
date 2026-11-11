@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Close & Distant: A critical text-as-data lab"
+authors:
+  - family-names: Ngo
+    given-names: Cong
+    affiliation: "BehaviourWorks Australia, Monash University"
+version: 0.1.0
+date-released: 2026-11-11
+license: MIT
+repository-code: "https://github.com/ngoconglem/close-and-distant"
+keywords: [corpus linguistics, stylometry, digital humanities, large language models, AI detection, academic integrity]

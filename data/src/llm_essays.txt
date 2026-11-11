@@ -1,0 +1,278 @@
+# LLM-generated comparison essays
+# Generator: Claude Opus 5.5 (Anthropic), generated 11 November 2026, single session.
+# Prompts are paraphrases of the ELLIPSE task prompts (see README). Conditions:
+#   default  = "Write an essay responding to the prompt."
+#   student  = "Write the essay as a 10th-grade student would."
+#   concise  = "Write a concise response of about 200 words."
+#   persuade = "Write a persuasive essay with a clear thesis and strong evidence."
+# Format: === id | prompt | condition, followed by the essay text.
+
+=== LLM-DL-01 | Distance learning | default
+Distance learning has moved from the margins of education to its centre, and the question is no longer whether students can learn from home, but whether they should be given the choice. In my view, offering distance learning as an option would benefit many students, provided that schools design it carefully and keep in-person learning available for those who need it.
+
+The most obvious benefit is flexibility. Students who work part-time jobs, care for younger siblings, or manage chronic illnesses often struggle to attend a rigid school day. Online classes allow them to keep up with coursework without sacrificing these responsibilities. For these learners, distance learning is not a convenience but a lifeline that keeps them enrolled.
+
+Distance learning can also support different learning styles. Recorded lessons let students pause, rewind, and review difficult material at their own pace. A student who is too shy to ask a question in a crowded classroom may feel more comfortable typing it into a chat box or emailing a teacher afterwards. In this sense, technology can make learning more personal rather than less.
+
+However, the benefits depend on access and support. Not every family has a reliable internet connection or a quiet place to study, and some students need the structure of a physical classroom to stay motivated. Social development matters too; school is where young people learn to collaborate, resolve conflicts, and build friendships.
+
+For these reasons, distance learning works best as an option rather than a replacement. When schools provide devices, train teachers, and maintain regular check-ins, students can enjoy the flexibility of learning from home without losing the human connections that make education meaningful.
+
+=== LLM-DL-02 | Distance learning | default
+Should students be allowed to attend classes from home? The rapid spread of online learning has made this a practical question for schools everywhere. While distance learning is not ideal for everyone, I believe that giving students the option to learn from home offers significant benefits.
+
+First, distance learning gives students greater control over their time. Without a daily commute, students gain extra hours that they can devote to studying, resting, or pursuing personal interests. Many students also find that they concentrate better in a familiar, comfortable environment free from the distractions of a busy hallway or a noisy cafeteria.
+
+Second, online learning prepares students for the future. Many workplaces now rely on remote collaboration, video meetings, and digital tools. Students who learn to manage their own schedules, communicate clearly in writing, and meet deadlines without constant supervision are developing skills that employers value.
+
+Third, distance learning can widen access to opportunities. A student in a small rural school might be able to take an advanced course that their own school cannot offer. Online programs can connect learners with specialised teachers and resources regardless of geography.
+
+Of course, there are challenges. Some students may feel isolated, and others may lack the self-discipline to stay on track. Schools must address these concerns by offering regular virtual check-ins, opportunities for group work, and in-person options for students who prefer them.
+
+Ultimately, education should adapt to the needs of individual learners. Distance learning, when implemented thoughtfully, can help more students succeed.
+
+=== LLM-DL-03 | Distance learning | default
+The idea of attending school from home once seemed futuristic, but today it is an everyday reality for many students. Whether this shift is beneficial depends largely on how distance learning is designed and who it is designed for. On balance, I think students would benefit from having the option to attend classes online.
+
+One important advantage is that distance learning can reduce stress. For students who experience anxiety in crowded environments or who face bullying at school, learning from home can provide a safer space in which to focus on their studies. When students feel secure, they are more likely to participate and to perform well.
+
+Another advantage is efficiency. Online platforms make it easy to access assignments, submit work, and receive feedback quickly. Teachers can use digital tools to track progress and identify students who are falling behind, allowing them to intervene earlier than they might in a traditional classroom.
+
+Nevertheless, distance learning has clear limitations. Hands-on subjects such as science labs, art, and physical education are difficult to replicate online. In addition, students miss out on informal learning that happens through conversations with peers and teachers. These experiences help develop communication skills and a sense of belonging.
+
+A balanced approach would allow students to choose a blend of online and in-person classes based on their needs. Such a model would combine the flexibility of distance learning with the community and practical experiences of the classroom. In this way, schools can ensure that technology enhances education rather than diminishing it.
+
+=== LLM-DL-04 | Distance learning | student
+I think students would benefit from being able to take classes from home, but only some students and not all the time. Online school has good parts and bad parts, and I have seen both.
+
+The best part about learning from home is that you don't have to wake up so early. Most teenagers are tired in the morning, and when I'm tired I don't really learn anything in first period. If I could log on from home, I could sleep a little longer and actually pay attention. Also you save time because you don't have to ride the bus for forty minutes.
+
+Another good thing is that you can work at your own pace. When a teacher goes too fast in class, I get lost and I'm too embarrassed to ask. With online classes, a lot of teachers post videos, so you can watch the lesson again until you get it.
+
+But there are also problems. At home there are a lot of distractions like my phone, my little brother, and the TV. It's easy to say you'll do your work later and then never do it. Some of my friends' grades went down when we did online school because nobody was making them do anything.
+
+Also, school is where you see your friends. Online it feels kind of lonely, and you don't get to talk to people the same way.
+
+So I think schools should let students choose. If someone is responsible and does better at home, they should be able to learn online. But students who need more help should stay in class with their teachers.
+
+=== LLM-DL-05 | Distance learning | student
+Some schools let students do classes from home on the computer. I think this is a good idea because it can help a lot of students, especially students who have other things going on in their life.
+
+For example, some students have jobs after school to help their families. If they could do some classes from home, they wouldn't be so tired and they could still get their work done. Other students might be sick a lot or have to go to the doctor, and online classes would help them not fall behind.
+
+Learning from home is also more comfortable. You can sit wherever you want and you don't have to worry about what you're wearing. When I'm comfortable I can focus better. At school there's always people talking and it's hard to concentrate on the work.
+
+Some people say students will just play games and not do their work. That might be true for some people, but teachers can check if you turned in your assignments and they can call your parents if you don't. Students have to learn to be responsible anyway before they go to college or get a job.
+
+One thing that's not as good is that you can't ask the teacher questions right away. Sometimes you have to wait for an email back. But a lot of teachers have video calls or office hours, so it's not that bad.
+
+Overall I think distance learning should be an option. It's not perfect, but it helps students who can't always come to school, and it teaches us how to manage our own time.
+
+=== LLM-DL-06 | Distance learning | student
+In my opinion students should be able to go to school from home if they want to, because everyone learns differently. Some people learn better in a classroom and some people learn better by themselves.
+
+When we did online classes last year, I actually liked it. I could finish my work faster because nobody was interrupting the class. In regular school, a lot of time gets wasted when the teacher has to tell people to be quiet or when we wait for everyone to get their books out. At home I could just do the assignment and then have free time.
+
+Also, a lot of students get bullied at school or don't feel comfortable there. If they could stay home they would feel safer and maybe their grades would go up.
+
+On the other hand, some things are harder online. Group projects were really hard because people wouldn't answer their messages. And in science we couldn't do any labs, we just watched videos of other people doing them, which was boring.
+
+I also missed my friends and lunch and sports. School isn't just about classes, it's also about being with people your age.
+
+So I think the best idea is to let students pick. Maybe they could come to school some days and stay home other days. That way they get the good things from both. Schools should ask students what works best for them instead of making everyone do the same thing.
+
+=== LLM-DL-07 | Distance learning | concise
+Distance learning should be available as an option because it benefits students with diverse needs. For learners who work, care for family members, or manage health conditions, online classes provide the flexibility to stay in school. Recorded lessons also allow students to review material at their own pace, which can deepen understanding.
+
+However, distance learning is not suitable for everyone. Some students lack reliable internet access or a quiet place to study, and others depend on the structure and social interaction of the classroom. Practical subjects, such as laboratory science and physical education, are also difficult to teach online.
+
+Therefore, schools should offer distance learning as a choice rather than a requirement. With adequate devices, teacher training, and regular check-ins, online learning can expand opportunities while preserving the benefits of in-person education.
+
+=== LLM-DL-08 | Distance learning | concise
+Attending classes from home can benefit many students. It removes the daily commute, gives students more control over their schedules, and lets them learn in a comfortable environment. Online tools make it easy to revisit lessons and to communicate with teachers privately, which helps students who are reluctant to speak in class.
+
+Yet the benefits are not automatic. Without supervision, some students struggle with motivation, and isolation can harm their wellbeing. Families without stable internet access may be left behind.
+
+The solution is a flexible model. Schools should allow students to choose online or blended options while ensuring access to devices, support services, and opportunities for social connection. Distance learning is a valuable tool, but it works best alongside, not instead of, the classroom.
+
+=== LLM-DL-09 | Distance learning | concise
+Students would benefit from the option of distance learning, but only if schools address its limitations. Online classes offer flexibility, reduce commuting time, and allow students to learn at their own pace. They can also give rural students access to courses their local schools cannot provide.
+
+At the same time, distance learning can increase inequality and isolation. Not all students have the technology or home environment needed to succeed, and many rely on teachers and peers for motivation.
+
+For these reasons, distance learning should complement traditional schooling. A hybrid approach, supported by investment in technology and student wellbeing, would allow schools to capture the advantages of online learning while protecting what makes in-person education valuable.
+
+=== LLM-DL-10 | Distance learning | persuade
+Every student deserves an education that fits their life, and distance learning makes that possible. Schools should give students the right to attend classes from home, because online learning increases access, improves focus, and builds the independence students will need after graduation.
+
+Consider access first. Thousands of students miss school each year because of illness, transportation problems, or family responsibilities. Each missed day widens the gap between them and their classmates. Distance learning closes that gap. A student recovering from surgery or caring for a younger sibling can still attend lessons, submit assignments, and stay connected with teachers. Denying these students an online option effectively denies them an education.
+
+Second, many students learn better at home. Traditional classrooms are full of interruptions, from side conversations to announcements over the loudspeaker. At home, students can create a quiet workspace, take short breaks when they need them, and replay lessons until they master difficult concepts. Studies of online learning have found that self-paced instruction can be especially effective for motivated students.
+
+Finally, distance learning teaches responsibility. In college and in the modern workplace, no one checks whether you are sitting at your desk. Success depends on managing deadlines, communicating clearly, and staying organised. Students who learn online practise these skills every day.
+
+Critics argue that students will lose social connections, but this concern can be addressed through virtual group projects, clubs, and optional in-person events. The benefits of distance learning are too significant to ignore. Schools must embrace it as a legitimate path to learning.
+
+=== LLM-DL-11 | Distance learning | persuade
+The traditional school day was designed for a world that no longer exists. Today, technology allows students to learn anytime and anywhere, and schools should take full advantage of it by offering distance learning to every student who wants it.
+
+The strongest argument for distance learning is that it puts students at the centre of their education. In a typical classroom, one teacher must deliver the same lesson at the same speed to thirty different learners. Some are bored, while others are lost. Online learning breaks this pattern. Students can move quickly through material they already understand and spend extra time on topics that challenge them. This personalised approach leads to deeper learning and greater confidence.
+
+Distance learning also protects students' wellbeing. For students who experience bullying, social anxiety, or sensory overload, the school building can be a source of daily stress. Learning from home removes these barriers and allows students to focus on what matters most: learning.
+
+Moreover, distance learning is efficient. Students save hours each week that would otherwise be spent commuting, waiting in hallways, or sitting through disruptions. That time can be used for homework, exercise, rest, or family.
+
+Opponents claim that online students become isolated, yet modern platforms offer video discussions, collaborative documents, and virtual clubs that keep students connected. With the right design, distance learning can be both social and rigorous.
+
+Schools that refuse to offer distance learning are holding students back. It is time to give learners the flexibility and freedom they deserve.
+
+=== LLM-DL-12 | Distance learning | persuade
+Allowing students to attend classes from home is not a temporary fix; it is a smarter way to educate. Schools should make distance learning a permanent option because it expands opportunity, respects individual needs, and prepares students for a digital future.
+
+Distance learning expands opportunity by removing the limits of geography. A small school may not have enough students to offer advanced physics, computer science, or a third foreign language. Through online classes, a student anywhere can enrol in these courses and learn from expert teachers. This is a powerful way to reduce the educational inequality between wealthy and poorer communities.
+
+Distance learning also respects the fact that students are different. Some thrive in lively classrooms, but others need quiet and independence to do their best work. Offering both options recognises these differences instead of forcing every student into the same mould.
+
+Most importantly, distance learning prepares students for the world they will enter. Remote work, online training, and digital communication are now standard in many careers. Students who are comfortable with these tools will have a clear advantage.
+
+Some worry that students will not stay motivated without a teacher in the room. This is a fair concern, but it can be solved with regular check-ins, clear expectations, and support from families. In fact, overcoming this challenge builds the very self-discipline that leads to long-term success.
+
+The evidence is clear. Distance learning benefits students, and schools should offer it to all.
+
+=== LLM-IT-01 | Impact of technology | default
+Technology has transformed nearly every aspect of modern life, from how we work and learn to how we communicate with the people we love. While it brings undeniable benefits, it also creates new challenges. In my view, technology has an overall positive effect on people's lives, but only when it is used thoughtfully.
+
+The most significant benefit of technology is access to information. With a smartphone, a person can learn a new language, research a medical question, or follow news from around the world in seconds. This access has empowered individuals and made education more widely available than ever before.
+
+Technology has also improved communication. Families separated by great distances can see each other on video calls, and friends can stay connected through messaging apps. In emergencies, technology allows people to call for help and receive alerts quickly, which can save lives.
+
+In addition, technology has made many tasks more efficient. Online banking, digital maps, and automated tools save time and reduce errors. In medicine, advanced equipment helps doctors diagnose diseases earlier and treat patients more effectively.
+
+However, technology is not without drawbacks. Excessive screen time can harm sleep, attention, and physical health. Social media may increase feelings of loneliness or anxiety, particularly among young people. There are also concerns about privacy, misinformation, and the loss of face-to-face interaction.
+
+Ultimately, technology is a tool, and its impact depends on how people use it. By setting healthy limits and staying critical of what we see online, we can enjoy the advantages of technology while minimising its harms.
+
+=== LLM-IT-02 | Impact of technology | default
+Few forces have shaped the modern world as powerfully as technology. It influences how people learn, work, relax, and relate to one another. Although technology has some negative effects, I believe its positive impact on people's lives is far greater.
+
+First, technology has revolutionised education. Students can now access online courses, digital libraries, and interactive learning tools that make difficult subjects easier to understand. Learners who once had limited resources can explore almost any topic from home.
+
+Second, technology has improved health and safety. Medical innovations such as advanced imaging, wearable fitness trackers, and telehealth services allow people to monitor their health and receive care more quickly. Meanwhile, navigation apps and safety features in cars have reduced accidents and helped people travel with confidence.
+
+Third, technology has created new economic opportunities. Entrepreneurs can start businesses online, reach customers around the world, and work remotely. Many jobs that did not exist twenty years ago, such as app developer or social media manager, now provide stable careers.
+
+That said, the negative effects of technology deserve attention. People may become overly dependent on their devices, spend less time outdoors, or struggle to focus. Cyberbullying and online scams are also serious problems.
+
+Despite these concerns, the benefits of technology clearly outweigh its costs. The key is to use technology responsibly, to teach young people healthy digital habits, and to ensure that everyone has fair access to its advantages.
+
+=== LLM-IT-03 | Impact of technology | default
+Is technology making our lives better or worse? This question has become increasingly important as smartphones, computers, and artificial intelligence become part of everyday life. I believe technology has both positive and negative effects, but its influence is mostly positive when people remain in control of it.
+
+On the positive side, technology connects people. Social networks, messaging apps, and video calls allow people to maintain relationships across distances and to find communities that share their interests. For people who feel isolated, these connections can be meaningful and supportive.
+
+Technology also makes knowledge more accessible. Online encyclopaedias, tutorials, and educational videos allow anyone with an internet connection to learn new skills. This democratisation of knowledge has opened doors for millions of people.
+
+On the negative side, technology can be distracting and even addictive. Many people check their phones constantly, which can reduce productivity and interfere with sleep. In addition, the spread of misinformation online can confuse people and damage trust in reliable sources.
+
+There are also concerns about privacy. Companies collect large amounts of personal data, often without users fully understanding how it will be used.
+
+In conclusion, technology is neither entirely good nor entirely bad. Its impact depends on the choices people make. By using technology intentionally, protecting personal information, and balancing screen time with real-world activities, people can ensure that technology improves their lives rather than controlling them.
+
+=== LLM-IT-04 | Impact of technology | student
+Technology is everywhere now. Almost everyone has a phone, and we use computers for school and for fun. I think technology is mostly good for people, but it can also be bad if you use it too much.
+
+One good thing about technology is that it makes school easier. If I don't understand my math homework, I can watch a video that explains it step by step. I can also look things up really fast instead of going to the library. My grandma says when she was in school they had to use encyclopedias, which sounds like it took forever.
+
+Technology also helps people stay in touch. My cousins live in another state, but we text and play video games together online. Without technology I would probably never talk to them.
+
+But technology has bad sides too. A lot of people my age are on their phones all the time. Sometimes I stay up really late watching videos and then I'm tired at school the next day. Also, some people get cyberbullied, which can be really bad because it follows you home.
+
+Another problem is that people don't talk to each other face to face as much. At dinner sometimes everyone in my family is just looking at their phones instead of talking.
+
+So I think technology is good, but people need to learn when to put it down. If you use it the right way it can help you a lot, but if you use it too much it can hurt you.
+
+=== LLM-IT-05 | Impact of technology | student
+Some people think technology is ruining our lives, but I think it actually helps us a lot. Technology makes things faster and easier, and it gives us more chances to learn and do fun things.
+
+For example, my mom uses an app to pay bills and order groceries, so she doesn't have to waste time driving to the store. My dad uses his phone for directions so we never get lost on road trips anymore. These are small things, but they save a lot of time.
+
+Technology also helps with jobs. A lot of people work from their computers now, and some people make money online by making videos or selling things. When I get older I want to be a video game designer, which is a job that only exists because of technology.
+
+Of course technology isn't perfect. Some people spend too much time on social media and feel bad about themselves when they compare their life to other people's. And some kids play video games so much that they don't go outside or do their homework.
+
+But I don't think that's technology's fault. It's about how people use it. A car can be dangerous if you drive too fast, but that doesn't mean cars are bad. It's the same with phones and computers.
+
+In conclusion, technology has a positive impact on people's lives. We just have to be smart about it and not let it take over everything we do.
+
+=== LLM-IT-06 | Impact of technology | student
+I think technology has good and bad effects on people, but if I had to choose I would say it's more good than bad.
+
+The best thing about technology is that you can learn almost anything. When I wanted to learn guitar, I watched videos online and now I can play a few songs. You don't need to pay for lessons if you have the internet. Teachers also use technology in class, like when we do quizzes on our laptops and get our scores right away.
+
+Technology also helps in emergencies. If someone gets hurt, you can call 911 from your phone right away. My friend's phone even called for help by itself when she was in a car accident.
+
+The bad thing is that people can get addicted. I know people who can't go five minutes without checking their phone. Even I feel weird if I forget my phone at home. Also, people post mean things online that they would never say to someone's face.
+
+Another bad thing is privacy. Apps know a lot about you, like where you go and what you like, and some people think that's creepy.
+
+So technology is like anything else. It can help you or hurt you depending on how you use it. I think schools should teach students how to use technology in a healthy way so we can get the good parts without the bad parts.
+
+=== LLM-IT-07 | Impact of technology | concise
+Technology has a largely positive impact on people's lives. It provides instant access to information, enables communication across great distances, and improves healthcare through advanced diagnostics and telemedicine. It also increases efficiency in everyday tasks, from banking to navigation.
+
+Nevertheless, technology carries real risks. Excessive screen time can affect sleep and mental health, social media can amplify misinformation and anxiety, and data collection raises privacy concerns.
+
+The impact of technology therefore depends on how it is used. With digital literacy, sensible limits, and strong privacy protections, people can maximise its benefits while reducing its harms.
+
+=== LLM-IT-08 | Impact of technology | concise
+Technology improves people's lives in many ways. It makes education more accessible, allows families and friends to stay connected, and creates new jobs and business opportunities. Medical technology helps people live longer, healthier lives.
+
+However, these benefits come with costs. Overuse of devices can reduce physical activity and face-to-face interaction, and online platforms can expose users to cyberbullying and false information.
+
+Overall, technology's positive effects outweigh its negative ones, but people must use it responsibly. Teaching healthy digital habits is essential to ensuring that technology serves people rather than controls them.
+
+=== LLM-IT-09 | Impact of technology | concise
+The impact of technology on people's lives is mixed but mostly beneficial. Technology gives people unprecedented access to knowledge, supports communication, and makes daily tasks faster and easier. In fields such as medicine and transportation, it has saved countless lives.
+
+At the same time, technology can encourage distraction, dependence, and isolation. Concerns about privacy and misinformation are also growing.
+
+The challenge is not to reject technology but to use it wisely. When individuals and communities set clear boundaries and think critically about digital information, technology becomes a powerful tool for improving quality of life.
+
+=== LLM-IT-10 | Impact of technology | persuade
+Technology is the single greatest force for human progress in our time, and its positive impact on people's lives far outweighs its drawbacks. From education to healthcare to economic opportunity, technology has expanded what ordinary people can achieve.
+
+Consider education. A generation ago, a student's learning was limited by the books in their school library and the knowledge of their teachers. Today, any student with an internet connection can watch lectures from world-class universities, practise skills with interactive programs, and receive instant feedback. Technology has made knowledge a public resource rather than a privilege.
+
+Healthcare offers an even more powerful example. Advanced imaging allows doctors to detect cancer at early, treatable stages. Telemedicine brings specialist care to rural communities that once had none. Wearable devices alert people to irregular heart rhythms before they become emergencies. These innovations are saving lives every day.
+
+Technology has also opened the door to economic opportunity. Small businesses can reach customers worldwide, freelancers can work for clients on other continents, and new industries are creating millions of jobs.
+
+Critics point to screen addiction and online negativity, but these problems reflect how technology is used, not technology itself. Just as society developed rules for cars and medicine, we can develop healthy norms for digital life.
+
+The evidence is overwhelming. Technology empowers people, improves wellbeing, and creates opportunity. Rather than fearing it, we should embrace technology and ensure that everyone can share in its benefits.
+
+=== LLM-IT-11 | Impact of technology | persuade
+Some people claim that technology is making us lonelier, lazier, and less intelligent. This view is understandable, but it is wrong. Technology has a profoundly positive effect on people's lives, and the evidence can be seen in how we learn, connect, and care for one another.
+
+First, technology has made learning limitless. Online courses, educational apps, and digital libraries allow people of all ages to develop new skills at their own pace. A retired teacher can learn to code, and a teenager in a remote village can study astronomy. This level of access was unimaginable only a few decades ago.
+
+Second, technology strengthens human connection. Video calls allow grandparents to watch their grandchildren grow up, even from across the world. Online communities give people with rare illnesses or unique interests a place to share experiences and support. For many, technology is not a barrier to connection but a bridge.
+
+Third, technology improves safety and health. Emergency alerts warn communities about natural disasters, GPS helps rescuers locate people in danger, and medical devices keep millions of patients alive.
+
+Of course, technology can be misused. However, the solution is education and responsible design, not rejection. We do not abandon books because some contain false information; we teach people to read critically.
+
+Technology, used wisely, makes our lives richer, safer, and more connected. It deserves to be recognised as one of humanity's most valuable achievements.
+
+=== LLM-IT-12 | Impact of technology | persuade
+Imagine a single day without technology: no phone to call for help, no map to guide you, no way to learn something new with a few taps. For most people, this would be not only inconvenient but limiting. Technology has become essential because it consistently improves people's lives.
+
+The most important contribution of technology is empowerment. It gives individuals the tools to solve problems on their own. Someone facing a medical question can find reliable health information, a job seeker can apply for positions around the world, and a student can find help with homework at any hour. Technology puts knowledge and opportunity directly into people's hands.
+
+Technology also makes society more inclusive. Screen readers allow people with visual impairments to use computers, captioning helps people who are deaf or hard of hearing, and translation apps break down language barriers. These tools ensure that more people can participate fully in education, work, and community life.
+
+In addition, technology drives innovation that benefits everyone. Renewable energy systems, smart agriculture, and advances in medicine all depend on technological progress. These innovations help address some of the world's greatest challenges, from climate change to disease.
+
+While it is true that technology can be overused, this is a matter of personal responsibility and good policy. With balanced habits and thoughtful regulation, the risks can be managed.
+
+Technology is not a threat to human life; it is one of its greatest supports. Its positive impact is clear, and its potential is still growing.
