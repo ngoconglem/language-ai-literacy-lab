@@ -10,14 +10,15 @@ Live site: _add the Vercel URL here_
 
 | Section | What it does |
 |---|---|
-| **Compare** | Nine interpretable style measures (lexical diversity, word length, lexical sophistication, sentence length and variation, hedges, boosters, connectives, self-mention) plotted essay by essay for any two groups, plus keyness with concordance lines. Paste your own text to compare. |
+| **Compare** | Nine interpretable style measures (lexical diversity, word length, lexical sophistication, sentence length and variation, hedges, boosters, connectives, self-mention) plotted text by text for any two groups, plus keyness with concordance lines. Use the built-in essays, or load two sets of your own texts (.txt files, a CSV with a `text` column, or pasted text) and download the measures as CSV. |
 | **Why detection fails** | A deliberately simple feature-based "AI detector". It catches 100% of default model output and flags no learners, until one prompt instruction ("write as a 10th-grade student") drops detection to 0%. Catching those essays wrongly flags 82% of learners. |
 | **Lab 1** | Concordance and frequency on Austen's *Persuasion* and the essay corpora. |
 | **Lab 2** | Keyness (log-likelihood, Log Ratio) and collocation (logDice, MI). |
 | **Lab 3** | Authorship attribution with Burrows' Delta on nine public-domain books. At 100 most frequent words, 69 of 69 passages have a nearest neighbour by the same author. |
 | **Lab 4** | Critical reading of an AI summary of Wentworth's letter in *Persuasion*: separating what the text says from what is said about it. |
+| **Teach with it** | Ready-to-run session plans: a 60-minute academic integrity workshop, two digital humanities tutorials, a writing class and a research methods seminar. |
 
-Everything runs in the browser. No text a user pastes is sent anywhere.
+Everything runs in the browser. No text a user pastes or loads from a file is sent anywhere.
 
 ## Data
 

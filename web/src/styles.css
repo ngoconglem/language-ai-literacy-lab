@@ -347,6 +347,19 @@ mark {
   font-size: 1.1rem;
 }
 
+.corpus-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 3px solid;
+  padding-top: 12px;
+}
+
+.corpus-input input[type="file"] {
+  font: inherit;
+  font-size: 0.9rem;
+}
+
 /* ---------- index list ---------- */
 
 .index {

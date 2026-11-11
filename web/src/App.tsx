@@ -4,6 +4,7 @@ import Compare from "./pages/Compare";
 import Detection from "./pages/Detection";
 import Labs from "./pages/Labs";
 import About from "./pages/About";
+import Teach from "./pages/Teach";
 import { REPO_URL } from "./config";
 
 function useRoute(): string[] {
@@ -11,7 +12,9 @@ function useRoute(): string[] {
   const parse = () => {
     const h = window.location.hash.replace(/^#\/?/, "");
     const lab = h.match(/^lab-?(\d)$/) ?? h.match(/^labs\/(\d)$/);
-    return lab ? ["labs", lab[1]] : h.split("/").filter(Boolean);
+    if (lab) return ["labs", lab[1]];
+    if (h === "compare-own") return ["compare", "own"];
+    return h.split("/").filter(Boolean);
   };
   const [route, setRoute] = useState(parse);
   useEffect(() => {
@@ -29,6 +32,7 @@ const NAV = [
   { href: "#compare", key: "compare", label: "Compare" },
   { href: "#detection", key: "detection", label: "Why detection fails" },
   { href: "#labs", key: "labs", label: "Labs" },
+  { href: "#teach", key: "teach", label: "Teach with it" },
   { href: "#about", key: "about", label: "About & data" },
 ];
 
@@ -41,6 +45,7 @@ export default function App() {
       compare: "Compare",
       detection: "Why detection fails",
       labs: "Labs",
+      teach: "Teach with it",
       about: "About & data",
     };
     document.title = titles[page] ? `${titles[page]} · Close & Distant` : "Close & Distant: reading human and machine text";
@@ -64,11 +69,12 @@ export default function App() {
       </header>
       <main>
         <div className="shell">
-          {page === "compare" && <Compare />}
+          {page === "compare" && <Compare key={route[1] ?? "builtin"} initialMode={route[1] === "own" ? "own" : "builtin"} />}
           {page === "detection" && <Detection />}
           {page === "labs" && <Labs lab={route[1]} />}
+          {page === "teach" && <Teach />}
           {page === "about" && <About />}
-          {!["compare", "detection", "labs", "about"].includes(page) && <Home />}
+          {!["compare", "detection", "labs", "teach", "about"].includes(page) && <Home />}
         </div>
       </main>
       <footer>
