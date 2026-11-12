@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.0.0",
     "@fontsource/dm-sans": "^5.0.0",
+    "js-tiktoken": "^1.0.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

@@ -59,6 +59,25 @@ const PLANS: Plan[] = [
     ),
   },
   {
+    id: "tokens-equity",
+    title: "Who pays for language models? Tokenisation and equity",
+    who: "Linguistics, language technology, TESOL or digital humanities classes; also staff development on AI",
+    length: "One 50-minute session",
+    outcome: "Students can explain what a model token is, measure the token premium for a language they know, and argue how it affects cost, access and fairness.",
+    steps: [
+      { time: "0–10 min", what: <>Ask: “Does a language model treat every language the same?” Collect quick predictions. Show Article 1 in English and Vietnamese in <a href="#lab-5">Lab 5</a> and count the tokens together.</> },
+      { time: "10–25 min", what: <>Pairs paste a paragraph in a language they know and record characters per token with each tokeniser. Those who know only English try a passage of their own writing and a passage of Shakespeare.</> },
+      { time: "25–40 min", what: <>Use the chart: which languages gained most from newer tokenisers, and which still pay most? Groups estimate how many pages of Burmese fit where 100 pages of English do.</> },
+      { time: "40–50 min", what: <>Discussion with the reflection questions. Exit task: one paragraph on who bears the cost of the token premium in a context they know.</> },
+    ],
+    after: (
+      <>
+        Readings: Petrov et al. (2023) and Ahia et al. (2023), cited at the end of Lab 5. Coding follow-up: the notebook{" "}
+        <a href={`${REPO_URL}/blob/main/notebooks/lab5_tokenisation.ipynb`}>lab5_tokenisation.ipynb</a>.
+      </>
+    ),
+  },
+  {
     id: "dh-methods",
     title: "First steps in text as data",
     who: "Undergraduate or postgraduate digital humanities, linguistics or literary studies",

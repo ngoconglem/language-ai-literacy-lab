@@ -843,3 +843,45 @@ svg text {
     transition: none;
   }
 }
+
+/* ---------- Lab 5 tokens ---------- */
+
+.token-strip {
+  line-height: 2.1;
+  font-size: 1rem;
+  max-width: 78ch;
+  word-break: break-word;
+}
+
+.tok {
+  padding: 3px 2px;
+  border-radius: 3px;
+  white-space: pre-wrap;
+}
+
+.tok-0 {
+  background: var(--learner-tint);
+}
+
+.tok-1 {
+  background: var(--model-tint);
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px 28px;
+  margin: 16px 0 8px;
+}
+
+.stat .value {
+  font-family: var(--display);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.stat .label {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}

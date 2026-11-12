@@ -8,7 +8,7 @@ export interface GlossaryEntry {
   /** A practical rule of thumb for reading the number. */
   rule?: string;
   example?: string;
-  topic: "Texts and words" | "Style measures" | "Comparing groups" | "Words in context" | "Authorship" | "Detection" | "Reading the charts";
+  topic: "Texts and words" | "Style measures" | "Comparing groups" | "Words in context" | "Authorship" | "Detection" | "Language models" | "Reading the charts";
 }
 
 export const GLOSSARY: GlossaryEntry[] = [
@@ -346,6 +346,42 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: "Accuracy",
     plain: "The share of all texts the detector classifies correctly. High accuracy can hide many wrong accusations if one group is much larger than the other.",
     topic: "Detection",
+  },
+
+  // ---------------------------------------------------------------- language models
+  {
+    id: "llm-token",
+    term: "Token (in a language model)",
+    plain: "The unit a language model reads and writes: a common word, part of a word, a single character or even part of a character, taken from a fixed vocabulary. Not the same as a token in corpus linguistics, which is a whole running word.",
+    example: "GPT-4o splits “unbelievable” into a few pieces, but treats “ the” (with its space) as a single token.",
+    topic: "Language models",
+  },
+  {
+    id: "tokeniser",
+    term: "Tokeniser",
+    plain: "The program that cuts text into a model's tokens before the model sees it. Each model family has its own tokeniser and vocabulary, learned from its training text.",
+    detail: "OpenAI's tokenisers use byte-pair encoding: start from the bytes of the text and repeatedly merge the most frequent neighbouring pairs into larger units. Languages that were rare in the training text get fewer merged units, so their text is cut into more, smaller pieces.",
+    topic: "Language models",
+  },
+  {
+    id: "token-premium",
+    term: "Token premium",
+    plain: "How many times more tokens a language needs than English to express the same content. 1.0 means the same as English; 2.0 means twice as many.",
+    rule: "A premium of 2.0 doubles the cost of the same request on a service that charges per token, and halves how much text fits in the model's context window.",
+    detail: "Petrov, A., La Malfa, E., Torr, P., & Bibi, A. (2023). Language model tokenizers introduce unfairness between languages. Advances in Neural Information Processing Systems, 36. Ahia, O., et al. (2023). Do all languages cost the same? Tokenization in the era of commercial language models. Proceedings of EMNLP 2023, 9904–9923.",
+    topic: "Language models",
+  },
+  {
+    id: "context-window",
+    term: "Context window",
+    plain: "The maximum number of tokens a model can take in at once, including your instructions, any documents you paste, and its reply. Text that does not fit is cut off or must be split.",
+    topic: "Language models",
+  },
+  {
+    id: "parallel-corpus",
+    term: "Parallel corpus",
+    plain: "The same texts in two or more languages, aligned so that equivalent passages can be compared. Translations of the Universal Declaration of Human Rights are a classic example.",
+    topic: "Language models",
   },
 
   // ---------------------------------------------------------------- reading the charts

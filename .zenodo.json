@@ -1,0 +1,32 @@
+{
+  "title": "Language & AI Literacy Lab: Linguistic analysis of human and AI writing",
+  "upload_type": "software",
+  "description": "<p>An open, browser-based teaching and research resource for critical, computational analysis of human and AI-generated writing. It compares learner and large-language-model essays with interpretable corpus, keyness and stylometric methods; demonstrates bias in AI-writing detection; and provides five digital humanities labs (concordance and frequency, keyness and collocation, Burrows' Delta authorship attribution, critical reading of an AI summary, and tokenisation across languages), with session plans and Python notebooks that reproduce every result.</p><p>Live site: https://language-ai-literacy-lab.vercel.app</p>",
+  "creators": [
+    {
+      "name": "Cong-Lem, Ngo",
+      "affiliation": "BehaviourWorks Australia, Monash University",
+      "orcid": "0000-0002-5257-8264"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "AI literacy",
+    "applied linguistics",
+    "corpus linguistics",
+    "stylometry",
+    "digital humanities",
+    "large language models",
+    "tokenisation",
+    "AI detection",
+    "academic integrity",
+    "teaching resource"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://language-ai-literacy-lab.vercel.app",
+      "relation": "isDocumentedBy",
+      "resource_type": "other"
+    }
+  ]
+}

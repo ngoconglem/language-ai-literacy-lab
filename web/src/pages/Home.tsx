@@ -149,8 +149,8 @@ export default function Home() {
           <a href="#labs">
             <span className="index-title">Labs</span>
             <span className="index-desc">
-              Four short teaching labs: concordance and frequency, keyness and collocation, authorship attribution with Burrows' Delta on
-              nineteenth-century fiction, and a critical reading of an AI summary of Austen.
+              Five short teaching labs: concordance and frequency, keyness and collocation, authorship attribution with Burrows' Delta on
+              nineteenth-century fiction, a critical reading of an AI summary of Austen, and how language models tokenise 22 languages.
             </span>
           </a>
         </li>
@@ -158,7 +158,7 @@ export default function Home() {
           <a href="#teach">
             <span className="index-title">Teach with it</span>
             <span className="index-desc">
-              Ready-to-run session plans for an academic integrity workshop, a digital humanities tutorial, a writing class and a research methods
+              Ready-to-run session plans for an academic integrity workshop, a digital humanities tutorial, a session on tokenisation and equity, a writing class and a research methods
               seminar, with notes on using your own texts.
             </span>
           </a>

@@ -3,14 +3,16 @@ import { useData, useResources, type Lab4Data, type LiteraryData } from "../lib/
 import { burrowsDelta, collocates, deltaToText, freq, keyness, tokens } from "../lib/text";
 import { Concordance } from "../components/Concordance";
 import { Heatmap, BarList } from "../components/charts";
-import { notebookUrl } from "../config";
 import { Guide, Term } from "../components/Guide";
+import { LabFrame } from "../components/LabFrame";
+import Lab5 from "./Lab5";
 
 const LABS = [
   { n: "1", title: "Concordance and frequency", blurb: "Read every occurrence of a word in its context, then count." },
   { n: "2", title: "Keyness and collocation", blurb: "Which words distinguish two groups, and which words keep company?" },
   { n: "3", title: "Who wrote this? Burrows' Delta", blurb: "Attribute passages of nineteenth-century fiction from function words alone." },
   { n: "4", title: "Reading an AI summary critically", blurb: "Check a model's account of Austen against the text itself." },
+  { n: "5", title: "How language models see your language", blurb: "Split the same text into model tokens in 22 languages, and see who pays more." },
 ];
 
 const STOP = new Set(
@@ -18,52 +20,6 @@ const STOP = new Set(
     " ",
   ),
 );
-
-function LabFrame({
-  title,
-  goal,
-  time,
-  ideas,
-  steps,
-  children,
-  reflect,
-  notebook,
-}: {
-  title: string;
-  goal: string;
-  time: string;
-  ideas: ReactNode;
-  steps: ReactNode[];
-  children: ReactNode;
-  reflect: string[];
-  notebook: string;
-}) {
-  return (
-    <article>
-      <h2 style={{ marginTop: 0.4 + "em" }}>{title}</h2>
-      <p className="lede">{goal}</p>
-      <Guide title={`Before you start (about ${time})`}>{ideas}</Guide>
-      <h3>Steps</h3>
-      <ol className="lab-steps">
-        {steps.map((s, i) => (
-          <li key={i}>{s}</li>
-        ))}
-      </ol>
-      {children}
-      <h3>Reflect</h3>
-      <ul className="lab-steps">
-        {reflect.map((r) => (
-          <li key={r}>{r}</li>
-        ))}
-      </ul>
-      <p className="small">
-        <a href={notebookUrl(notebook)}>Reproduce this lab in Python ({notebook})</a>
-      </p>
-    </article>
-  );
-}
-
-// ---------------- Lab 1 ----------------
 
 function Lab1() {
   const res = useResources();
@@ -608,7 +564,7 @@ export default function Labs({ lab }: { lab?: string }) {
     <>
       <h1>Labs</h1>
       <p className="lede">
-        Four short, self-contained labs for a first course in digital humanities methods. Each pairs a computational step with close reading
+        Five short, self-contained labs for a first course in digital humanities methods. Each pairs a computational step with close reading
         and ends with questions for discussion.
       </p>
       {current && (
@@ -638,6 +594,7 @@ export default function Labs({ lab }: { lab?: string }) {
       {current?.n === "2" && <Lab2 />}
       {current?.n === "3" && <Lab3 />}
       {current?.n === "4" && <Lab4 />}
+      {current?.n === "5" && <Lab5 />}
     </>
   );
 }

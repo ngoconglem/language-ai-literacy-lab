@@ -1,0 +1,156 @@
+[
+ {
+  "code": "en",
+  "name": "English",
+  "script": "Latin",
+  "file": "eng.txt",
+  "article1": "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood."
+ },
+ {
+  "code": "vi",
+  "name": "Vietnamese",
+  "script": "Latin (with diacritics)",
+  "file": "vie.txt",
+  "article1": "Tất cả mọi người sinh ra đều được tự do và bình đẳng về nhân phẩm và quyền. Mọi con người đều được tạo hoá ban cho lý trí và lương tâm và cần phải đối xử với nhau trong tình bằng hữu."
+ },
+ {
+  "code": "zh",
+  "name": "Chinese (Simplified)",
+  "script": "Han",
+  "file": "cmn_hans.txt",
+  "article1": "人人生而自由,在尊严和权利上一律平等。他们赋有理性和良心,并应以兄弟关系的精神相对待。"
+ },
+ {
+  "code": "ja",
+  "name": "Japanese",
+  "script": "Kanji and kana",
+  "file": "jpn.txt",
+  "article1": "すべての人間は、生まれながらにして自由であり、かつ、尊厳と権利とについて平等である。人間は、理性と良心とを授けられており、互いに同胞の精神をもって行動しなければならない。"
+ },
+ {
+  "code": "ko",
+  "name": "Korean",
+  "script": "Hangul",
+  "file": "kor.txt",
+  "article1": "모든 인간은 태어날 때부터 자유로우며 그 존엄과 권리에 있어 동등하다. 인간은 천부적으로 이성과 양심을 부여받았으며 서로 형제애의 정신으로 행동하여야 한다."
+ },
+ {
+  "code": "th",
+  "name": "Thai",
+  "script": "Thai",
+  "file": "tha.txt",
+  "article1": "มนุษย์ทั้งหลายเกิดมามีอิสระและเสมอภาคกันในเกียรติศักด[เกียรติศักดิ์]และสิทธิ ต่างมีเหตุผลและมโนธรรม และควรปฏิบัติต่อกันด้วยเจตนารมณ์แห่งภราดรภาพ"
+ },
+ {
+  "code": "km",
+  "name": "Khmer",
+  "script": "Khmer",
+  "file": "khm.txt",
+  "article1": "មនុស្សទាំងអស់ កើតមកមានសេរីភាព និងសមភាព ក្នុងផ្នែកសេចក្ដីថ្លៃថ្នូរនិងសិទ្ធិ។ មនុស្ស មានវិចារណញ្ញាណនិងសតិសម្បជញ្ញៈជាប់ពីកំណើត ហើយគប្បីប្រព្រឹត្ដចំពោះគ្នាទៅវិញទៅមក ក្នុង ស្មារតីភាតរភាពជាបងប្អូន។"
+ },
+ {
+  "code": "my",
+  "name": "Burmese",
+  "script": "Myanmar",
+  "file": "mya.txt",
+  "article1": "လူတိုင်းသည် တူညီ လွတ်လပ်သော ဂုဏ်သိက္ခါဖြင့် လည်းကောင်း၊ တူညီလွတ်လပ်သော အခွင့်အရေးများဖြင့် လည်းကောင်း၊ မွေးဖွားလာသူများ ဖြစ်သည်။ ထိုသူတို့၌ ပိုင်းခြား ဝေဖန်တတ်သော ဉာဏ်နှင့် ကျင့်ဝတ် သိတတ်သော စိတ်တို့ရှိကြ၍ ထိုသူတို့သည် အချင်းချင်း မေတ္တာထား၍ ဆက်ဆံကျင့်သုံးသင့်၏။"
+ },
+ {
+  "code": "id",
+  "name": "Indonesian",
+  "script": "Latin",
+  "file": "ind.txt",
+  "article1": "Semua orang dilahirkan merdeka dan mempunyai martabat dan hak-hak yang sama. Mereka dikaruniai akal dan hati nurani dan hendaknya bergaul satu sama lain dalam semangat persaudaraan."
+ },
+ {
+  "code": "tl",
+  "name": "Tagalog",
+  "script": "Latin",
+  "file": "tgl.txt",
+  "article1": "Ang lahat ng tao'y isinilang na malaya at pantay-pantay sa karangalan at mga karapatan. Sila'y pinagkalooban ng katwiran at budhi at dapat magpalagayan ang isa't isa sa diwa ng pagkakapatiran."
+ },
+ {
+  "code": "hi",
+  "name": "Hindi",
+  "script": "Devanagari",
+  "file": "hin.txt",
+  "article1": "सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है । उन्हें बुद्घि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिए ।"
+ },
+ {
+  "code": "bn",
+  "name": "Bengali",
+  "script": "Bengali",
+  "file": "ben.txt",
+  "article1": "সমস্ত মানুষ স্বাধীনভাবে সমান মর্যাদা এবং অধিকার নিয়ে জন্মগ্রহণ করে। তাঁদের বিবেক এবং বুদ্ধি আছে ; সুতরাং সকলেরই একে অপরের প্রতি ভ্রাতৃত্বসুলভ মনোভাব নিয়ে আচরণ করা উচিত্‍।"
+ },
+ {
+  "code": "ta",
+  "name": "Tamil",
+  "script": "Tamil",
+  "file": "tam.txt",
+  "article1": "மனிதப் பிறிவியினர் சகலரும் சுதந்திரமாகவே பிறக்கின்றனர் ; அவர்கள் மதிப்பிலும், உரிமைகளிலும் சமமானவர்கள், அவர்கள் நியாயத்தையும் மனச்சாட்சியையும் இயற்பண்பாகப் பெற்றவர்கள். அவர்கள் ஒருவருடனொருவர் சகோதர உணர்வுப் பாங்கில் நடந்துகொள்ளல் வேண்டும்."
+ },
+ {
+  "code": "ar",
+  "name": "Arabic",
+  "script": "Arabic",
+  "file": "arb.txt",
+  "article1": "يولد جميع الناس أحرارًا متساوين في الكرامة والحقوق. وقد وهبوا عقلاً وضميرًا وعليهم أن يعامل بعضهم بعضًا بروح الإخاء."
+ },
+ {
+  "code": "ru",
+  "name": "Russian",
+  "script": "Cyrillic",
+  "file": "rus.txt",
+  "article1": "Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства."
+ },
+ {
+  "code": "es",
+  "name": "Spanish",
+  "script": "Latin",
+  "file": "spa.txt",
+  "article1": "Todos los seres humanos nacen libres e iguales en dignidad y derechos y, dotados como están de razón y conciencia, deben comportarse fraternalmente los unos con los otros."
+ },
+ {
+  "code": "fr",
+  "name": "French",
+  "script": "Latin",
+  "file": "fra.txt",
+  "article1": "Tous les êtres humains naissent libres et égaux en dignité et en droits. Ils sont doués de raison et de conscience et doivent agir les uns envers les autres dans un esprit de fraternité."
+ },
+ {
+  "code": "de",
+  "name": "German",
+  "script": "Latin",
+  "file": "deu.txt",
+  "article1": "Alle Menschen sind frei und gleich an Würde und Rechten geboren. Sie sind mit Vernunft und Gewissen begabt und sollen einander im Geist der Brüderlichkeit begegnen."
+ },
+ {
+  "code": "sw",
+  "name": "Swahili",
+  "script": "Latin",
+  "file": "swh.txt",
+  "article1": "Watu wote wamezaliwa huru, hadhi na haki zao ni sawa. Wote wamejaliwa akili na dhamiri, hivyo yapasa watendeane kindugu."
+ },
+ {
+  "code": "yo",
+  "name": "Yoruba",
+  "script": "Latin (with diacritics)",
+  "file": "yor.txt",
+  "article1": "Gbogbo ènìyàn ni a bí ní òmìnira; iyì àti è̩tó̩ kò̩ò̩kan sì dó̩gba. Wó̩n ní è̩bùn ti làákàyè àti ti è̩rí‐o̩kàn, ó sì ye̩ kí wo̩n ó máa hùwà sí ara wo̩n gé̩gé̩ bí o̩mo̩ ìyá."
+ },
+ {
+  "code": "zu",
+  "name": "Zulu",
+  "script": "Latin",
+  "file": "zul.txt",
+  "article1": "Bonke abantu bazalwa bekhululekile belingana ngesithunzi nangamalungelo. Bahlanganiswe wumcabango nangunembeza futhi kufanele baphathane ngomoya wobunye."
+ },
+ {
+  "code": "am",
+  "name": "Amharic",
+  "script": "Ethiopic",
+  "file": "amh.txt",
+  "article1": "የሰው፡ልጅ፡ሁሉ፡ሲወለድ፡ነጻና፡በክብርና፡በመብትም፡እኩልነት፡ያለው፡ነው።፡የተፈጥሮ፡ማስተዋልና፡ሕሊና፡ስላለው፡አንዱ፡ሌላውን፡በወንድማማችነት፡መንፈስ፡መመልከት፡ይገባዋል።"
+ }
+]

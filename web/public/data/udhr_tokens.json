@@ -1,0 +1,537 @@
+{
+ "encodings": [
+  "r50k_base",
+  "cl100k_base",
+  "o200k_base"
+ ],
+ "languages": [
+  {
+   "code": "en",
+   "name": "English",
+   "script": "Latin",
+   "file": "eng.txt",
+   "article1": "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.",
+   "characters": 8598,
+   "bytes": 8608,
+   "article1_tokens": {
+    "r50k_base": 33,
+    "cl100k_base": 33,
+    "o200k_base": 33
+   },
+   "tokens": {
+    "r50k_base": 1661,
+    "cl100k_base": 1645,
+    "o200k_base": 1644
+   },
+   "premium": {
+    "r50k_base": 1,
+    "cl100k_base": 1,
+    "o200k_base": 1
+   }
+  },
+  {
+   "code": "vi",
+   "name": "Vietnamese",
+   "script": "Latin (with diacritics)",
+   "file": "vie.txt",
+   "article1": "Tất cả mọi người sinh ra đều được tự do và bình đẳng về nhân phẩm và quyền. Mọi con người đều được tạo hoá ban cho lý trí và lương tâm và cần phải đối xử với nhau trong tình bằng hữu.",
+   "characters": 8901,
+   "bytes": 12187,
+   "article1_tokens": {
+    "r50k_base": 178,
+    "cl100k_base": 84,
+    "o200k_base": 50
+   },
+   "tokens": {
+    "r50k_base": 8685,
+    "cl100k_base": 4446,
+    "o200k_base": 2498
+   },
+   "premium": {
+    "r50k_base": 5.229,
+    "cl100k_base": 2.703,
+    "o200k_base": 1.519
+   }
+  },
+  {
+   "code": "zh",
+   "name": "Chinese (Simplified)",
+   "script": "Han",
+   "file": "cmn_hans.txt",
+   "article1": "人人生而自由,在尊严和权利上一律平等。他们赋有理性和良心,并应以兄弟关系的精神相对待。",
+   "characters": 2352,
+   "bytes": 6770,
+   "article1_tokens": {
+    "r50k_base": 82,
+    "cl100k_base": 52,
+    "o200k_base": 37
+   },
+   "tokens": {
+    "r50k_base": 4612,
+    "cl100k_base": 2717,
+    "o200k_base": 1858
+   },
+   "premium": {
+    "r50k_base": 2.777,
+    "cl100k_base": 1.652,
+    "o200k_base": 1.13
+   }
+  },
+  {
+   "code": "ja",
+   "name": "Japanese",
+   "script": "Kanji and kana",
+   "file": "jpn.txt",
+   "article1": "すべての人間は、生まれながらにして自由であり、かつ、尊厳と権利とについて平等である。人間は、理性と良心とを授けられており、互いに同胞の精神をもって行動しなければならない。",
+   "characters": 3509,
+   "bytes": 10283,
+   "article1_tokens": {
+    "r50k_base": 117,
+    "cl100k_base": 93,
+    "o200k_base": 72
+   },
+   "tokens": {
+    "r50k_base": 5506,
+    "cl100k_base": 4024,
+    "o200k_base": 2993
+   },
+   "premium": {
+    "r50k_base": 3.315,
+    "cl100k_base": 2.446,
+    "o200k_base": 1.821
+   }
+  },
+  {
+   "code": "ko",
+   "name": "Korean",
+   "script": "Hangul",
+   "file": "kor.txt",
+   "article1": "모든 인간은 태어날 때부터 자유로우며 그 존엄과 권리에 있어 동등하다. 인간은 천부적으로 이성과 양심을 부여받았으며 서로 형제애의 정신으로 행동하여야 한다.",
+   "characters": 3925,
+   "bytes": 9448,
+   "article1_tokens": {
+    "r50k_base": 197,
+    "cl100k_base": 85,
+    "o200k_base": 51
+   },
+   "tokens": {
+    "r50k_base": 8222,
+    "cl100k_base": 3865,
+    "o200k_base": 2269
+   },
+   "premium": {
+    "r50k_base": 4.95,
+    "cl100k_base": 2.35,
+    "o200k_base": 1.38
+   }
+  },
+  {
+   "code": "th",
+   "name": "Thai",
+   "script": "Thai",
+   "file": "tha.txt",
+   "article1": "มนุษย์ทั้งหลายเกิดมามีอิสระและเสมอภาคกันในเกียรติศักด[เกียรติศักดิ์]และสิทธิ ต่างมีเหตุผลและมโนธรรม และควรปฏิบัติต่อกันด้วยเจตนารมณ์แห่งภราดรภาพ",
+   "characters": 7524,
+   "bytes": 21860,
+   "article1_tokens": {
+    "r50k_base": 284,
+    "cl100k_base": 148,
+    "o200k_base": 72
+   },
+   "tokens": {
+    "r50k_base": 14641,
+    "cl100k_base": 7207,
+    "o200k_base": 3159
+   },
+   "premium": {
+    "r50k_base": 8.815,
+    "cl100k_base": 4.381,
+    "o200k_base": 1.922
+   }
+  },
+  {
+   "code": "km",
+   "name": "Khmer",
+   "script": "Khmer",
+   "file": "khm.txt",
+   "article1": "មនុស្សទាំងអស់ កើតមកមានសេរីភាព និងសមភាព ក្នុងផ្នែកសេចក្ដីថ្លៃថ្នូរនិងសិទ្ធិ។ មនុស្ស មានវិចារណញ្ញាណនិងសតិសម្បជញ្ញៈជាប់ពីកំណើត ហើយគប្បីប្រព្រឹត្ដចំពោះគ្នាទៅវិញទៅមក ក្នុង ស្មារតីភាតរភាពជាបងប្អូន។",
+   "characters": 8663,
+   "bytes": 25025,
+   "article1_tokens": {
+    "r50k_base": 549,
+    "cl100k_base": 311,
+    "o200k_base": 116
+   },
+   "tokens": {
+    "r50k_base": 24623,
+    "cl100k_base": 13902,
+    "o200k_base": 5271
+   },
+   "premium": {
+    "r50k_base": 14.824,
+    "cl100k_base": 8.451,
+    "o200k_base": 3.206
+   }
+  },
+  {
+   "code": "my",
+   "name": "Burmese",
+   "script": "Myanmar",
+   "file": "mya.txt",
+   "article1": "လူတိုင်းသည် တူညီ လွတ်လပ်သော ဂုဏ်သိက္ခါဖြင့် လည်းကောင်း၊ တူညီလွတ်လပ်သော အခွင့်အရေးများဖြင့် လည်းကောင်း၊ မွေးဖွားလာသူများ ဖြစ်သည်။ ထိုသူတို့၌ ပိုင်းခြား ဝေဖန်တတ်သော ဉာဏ်နှင့် ကျင့်ဝတ် သိတတ်သော စိတ်တို့ရှိကြ၍ ထိုသူတို့သည် အချင်းချင်း မေတ္တာထား၍ ဆက်ဆံကျင့်သုံးသင့်၏။",
+   "characters": 12628,
+   "bytes": 35834,
+   "article1_tokens": {
+    "r50k_base": 726,
+    "cl100k_base": 512,
+    "o200k_base": 134
+   },
+   "tokens": {
+    "r50k_base": 34893,
+    "cl100k_base": 24538,
+    "o200k_base": 6645
+   },
+   "premium": {
+    "r50k_base": 21.007,
+    "cl100k_base": 14.917,
+    "o200k_base": 4.042
+   }
+  },
+  {
+   "code": "id",
+   "name": "Indonesian",
+   "script": "Latin",
+   "file": "ind.txt",
+   "article1": "Semua orang dilahirkan merdeka dan mempunyai martabat dan hak-hak yang sama. Mereka dikaruniai akal dan hati nurani dan hendaknya bergaul satu sama lain dalam semangat persaudaraan.",
+   "characters": 10094,
+   "bytes": 10094,
+   "article1_tokens": {
+    "r50k_base": 70,
+    "cl100k_base": 57,
+    "o200k_base": 47
+   },
+   "tokens": {
+    "r50k_base": 3950,
+    "cl100k_base": 3075,
+    "o200k_base": 2388
+   },
+   "premium": {
+    "r50k_base": 2.378,
+    "cl100k_base": 1.869,
+    "o200k_base": 1.453
+   }
+  },
+  {
+   "code": "tl",
+   "name": "Tagalog",
+   "script": "Latin",
+   "file": "tgl.txt",
+   "article1": "Ang lahat ng tao'y isinilang na malaya at pantay-pantay sa karangalan at mga karapatan. Sila'y pinagkalooban ng katwiran at budhi at dapat magpalagayan ang isa't isa sa diwa ng pagkakapatiran.",
+   "characters": 10043,
+   "bytes": 10043,
+   "article1_tokens": {
+    "r50k_base": 81,
+    "cl100k_base": 66,
+    "o200k_base": 58
+   },
+   "tokens": {
+    "r50k_base": 4027,
+    "cl100k_base": 3546,
+    "o200k_base": 2798
+   },
+   "premium": {
+    "r50k_base": 2.424,
+    "cl100k_base": 2.156,
+    "o200k_base": 1.702
+   }
+  },
+  {
+   "code": "hi",
+   "name": "Hindi",
+   "script": "Devanagari",
+   "file": "hin.txt",
+   "article1": "सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है । उन्हें बुद्घि और अन्तरात्मा की देन प्राप्त है और परस्पर उन्हें भाईचारे के भाव से बर्ताव करना चाहिए ।",
+   "characters": 9009,
+   "bytes": 23457,
+   "article1_tokens": {
+    "r50k_base": 296,
+    "cl100k_base": 182,
+    "o200k_base": 56
+   },
+   "tokens": {
+    "r50k_base": 14044,
+    "cl100k_base": 8812,
+    "o200k_base": 2640
+   },
+   "premium": {
+    "r50k_base": 8.455,
+    "cl100k_base": 5.357,
+    "o200k_base": 1.606
+   }
+  },
+  {
+   "code": "bn",
+   "name": "Bengali",
+   "script": "Bengali",
+   "file": "ben.txt",
+   "article1": "সমস্ত মানুষ স্বাধীনভাবে সমান মর্যাদা এবং অধিকার নিয়ে জন্মগ্রহণ করে। তাঁদের বিবেক এবং বুদ্ধি আছে ; সুতরাং সকলেরই একে অপরের প্রতি ভ্রাতৃত্বসুলভ মনোভাব নিয়ে আচরণ করা উচিত্‍।",
+   "characters": 7918,
+   "bytes": 21330,
+   "article1_tokens": {
+    "r50k_base": 343,
+    "cl100k_base": 216,
+    "o200k_base": 58
+   },
+   "tokens": {
+    "r50k_base": 15934,
+    "cl100k_base": 9664,
+    "o200k_base": 2755
+   },
+   "premium": {
+    "r50k_base": 9.593,
+    "cl100k_base": 5.875,
+    "o200k_base": 1.676
+   }
+  },
+  {
+   "code": "ta",
+   "name": "Tamil",
+   "script": "Tamil",
+   "file": "tam.txt",
+   "article1": "மனிதப் பிறிவியினர் சகலரும் சுதந்திரமாகவே பிறக்கின்றனர் ; அவர்கள் மதிப்பிலும், உரிமைகளிலும் சமமானவர்கள், அவர்கள் நியாயத்தையும் மனச்சாட்சியையும் இயற்பண்பாகப் பெற்றவர்கள். அவர்கள் ஒருவருடனொருவர் சகோதர உணர்வுப் பாங்கில் நடந்துகொள்ளல் வேண்டும்.",
+   "characters": 10976,
+   "bytes": 30470,
+   "article1_tokens": {
+    "r50k_base": 664,
+    "cl100k_base": 330,
+    "o200k_base": 76
+   },
+   "tokens": {
+    "r50k_base": 30415,
+    "cl100k_base": 15320,
+    "o200k_base": 4029
+   },
+   "premium": {
+    "r50k_base": 18.311,
+    "cl100k_base": 9.313,
+    "o200k_base": 2.451
+   }
+  },
+  {
+   "code": "ar",
+   "name": "Arabic",
+   "script": "Arabic",
+   "file": "arb.txt",
+   "article1": "يولد جميع الناس أحرارًا متساوين في الكرامة والحقوق. وقد وهبوا عقلاً وضميرًا وعليهم أن يعامل بعضهم بعضًا بروح الإخاء.",
+   "characters": 6234,
+   "bytes": 11239,
+   "article1_tokens": {
+    "r50k_base": 120,
+    "cl100k_base": 88,
+    "o200k_base": 44
+   },
+   "tokens": {
+    "r50k_base": 6248,
+    "cl100k_base": 4345,
+    "o200k_base": 1997
+   },
+   "premium": {
+    "r50k_base": 3.762,
+    "cl100k_base": 2.641,
+    "o200k_base": 1.215
+   }
+  },
+  {
+   "code": "ru",
+   "name": "Russian",
+   "script": "Cyrillic",
+   "file": "rus.txt",
+   "article1": "Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства.",
+   "characters": 9652,
+   "bytes": 17767,
+   "article1_tokens": {
+    "r50k_base": 172,
+    "cl100k_base": 74,
+    "o200k_base": 41
+   },
+   "tokens": {
+    "r50k_base": 10518,
+    "cl100k_base": 4160,
+    "o200k_base": 2281
+   },
+   "premium": {
+    "r50k_base": 6.332,
+    "cl100k_base": 2.529,
+    "o200k_base": 1.387
+   }
+  },
+  {
+   "code": "es",
+   "name": "Spanish",
+   "script": "Latin",
+   "file": "spa.txt",
+   "article1": "Todos los seres humanos nacen libres e iguales en dignidad y derechos y, dotados como están de razón y conciencia, deben comportarse fraternalmente los unos con los otros.",
+   "characters": 9613,
+   "bytes": 9797,
+   "article1_tokens": {
+    "r50k_base": 58,
+    "cl100k_base": 44,
+    "o200k_base": 38
+   },
+   "tokens": {
+    "r50k_base": 3298,
+    "cl100k_base": 2397,
+    "o200k_base": 1986
+   },
+   "premium": {
+    "r50k_base": 1.986,
+    "cl100k_base": 1.457,
+    "o200k_base": 1.208
+   }
+  },
+  {
+   "code": "fr",
+   "name": "French",
+   "script": "Latin",
+   "file": "fra.txt",
+   "article1": "Tous les êtres humains naissent libres et égaux en dignité et en droits. Ils sont doués de raison et de conscience et doivent agir les uns envers les autres dans un esprit de fraternité.",
+   "characters": 9633,
+   "bytes": 10062,
+   "article1_tokens": {
+    "r50k_base": 61,
+    "cl100k_base": 50,
+    "o200k_base": 41
+   },
+   "tokens": {
+    "r50k_base": 3242,
+    "cl100k_base": 2526,
+    "o200k_base": 2135
+   },
+   "premium": {
+    "r50k_base": 1.952,
+    "cl100k_base": 1.536,
+    "o200k_base": 1.299
+   }
+  },
+  {
+   "code": "de",
+   "name": "German",
+   "script": "Latin",
+   "file": "deu.txt",
+   "article1": "Alle Menschen sind frei und gleich an Würde und Rechten geboren. Sie sind mit Vernunft und Gewissen begabt und sollen einander im Geist der Brüderlichkeit begegnen.",
+   "characters": 9734,
+   "bytes": 9865,
+   "article1_tokens": {
+    "r50k_base": 60,
+    "cl100k_base": 44,
+    "o200k_base": 38
+   },
+   "tokens": {
+    "r50k_base": 3749,
+    "cl100k_base": 2685,
+    "o200k_base": 2094
+   },
+   "premium": {
+    "r50k_base": 2.257,
+    "cl100k_base": 1.632,
+    "o200k_base": 1.274
+   }
+  },
+  {
+   "code": "sw",
+   "name": "Swahili",
+   "script": "Latin",
+   "file": "swh.txt",
+   "article1": "Watu wote wamezaliwa huru, hadhi na haki zao ni sawa. Wote wamejaliwa akili na dhamiri, hivyo yapasa watendeane kindugu.",
+   "characters": 8309,
+   "bytes": 8309,
+   "article1_tokens": {
+    "r50k_base": 49,
+    "cl100k_base": 48,
+    "o200k_base": 36
+   },
+   "tokens": {
+    "r50k_base": 3534,
+    "cl100k_base": 3260,
+    "o200k_base": 2383
+   },
+   "premium": {
+    "r50k_base": 2.128,
+    "cl100k_base": 1.982,
+    "o200k_base": 1.45
+   }
+  },
+  {
+   "code": "yo",
+   "name": "Yoruba",
+   "script": "Latin (with diacritics)",
+   "file": "yor.txt",
+   "article1": "Gbogbo ènìyàn ni a bí ní òmìnira; iyì àti è̩tó̩ kò̩ò̩kan sì dó̩gba. Wó̩n ní è̩bùn ti làákàyè àti ti è̩rí‐o̩kàn, ó sì ye̩ kí wo̩n ó máa hùwà sí ara wo̩n gé̩gé̩ bí o̩mo̩ ìyá.",
+   "characters": 10283,
+   "bytes": 14090,
+   "article1_tokens": {
+    "r50k_base": 152,
+    "cl100k_base": 126,
+    "o200k_base": 107
+   },
+   "tokens": {
+    "r50k_base": 9076,
+    "cl100k_base": 7767,
+    "o200k_base": 6716
+   },
+   "premium": {
+    "r50k_base": 5.464,
+    "cl100k_base": 4.722,
+    "o200k_base": 4.085
+   }
+  },
+  {
+   "code": "zu",
+   "name": "Zulu",
+   "script": "Latin",
+   "file": "zul.txt",
+   "article1": "Bonke abantu bazalwa bekhululekile belingana ngesithunzi nangamalungelo. Bahlanganiswe wumcabango nangunembeza futhi kufanele baphathane ngomoya wobunye.",
+   "characters": 8287,
+   "bytes": 8291,
+   "article1_tokens": {
+    "r50k_base": 64,
+    "cl100k_base": 62,
+    "o200k_base": 40
+   },
+   "tokens": {
+    "r50k_base": 3657,
+    "cl100k_base": 3334,
+    "o200k_base": 2646
+   },
+   "premium": {
+    "r50k_base": 2.202,
+    "cl100k_base": 2.027,
+    "o200k_base": 1.609
+   }
+  },
+  {
+   "code": "am",
+   "name": "Amharic",
+   "script": "Ethiopic",
+   "file": "amh.txt",
+   "article1": "የሰው፡ልጅ፡ሁሉ፡ሲወለድ፡ነጻና፡በክብርና፡በመብትም፡እኩልነት፡ያለው፡ነው።፡የተፈጥሮ፡ማስተዋልና፡ሕሊና፡ስላለው፡አንዱ፡ሌላውን፡በወንድማማችነት፡መንፈስ፡መመልከት፡ይገባዋል።",
+   "characters": 5426,
+   "bytes": 16118,
+   "article1_tokens": {
+    "r50k_base": 309,
+    "cl100k_base": 305,
+    "o200k_base": 206
+   },
+   "tokens": {
+    "r50k_base": 16118,
+    "cl100k_base": 15959,
+    "o200k_base": 10772
+   },
+   "premium": {
+    "r50k_base": 9.704,
+    "cl100k_base": 9.702,
+    "o200k_base": 6.552
+   }
+  }
+ ]
+}

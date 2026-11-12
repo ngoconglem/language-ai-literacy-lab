@@ -2,11 +2,13 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "Language & AI Literacy Lab: Linguistic analysis of human and AI writing"
 authors:
-  - family-names: Ngo
-    given-names: Cong
+  - family-names: Cong-Lem
+    given-names: Ngo
     affiliation: "BehaviourWorks Australia, Monash University"
-version: 0.1.0
-date-released: 2026-11-11
+    orcid: "https://orcid.org/0000-0002-5257-8264"
+version: 0.2.0
+date-released: 2026-11-13
 license: MIT
+url: "https://language-ai-literacy-lab.vercel.app"
 repository-code: "https://github.com/ngoconglem/language-ai-literacy-lab"
-keywords: [AI literacy, applied linguistics, corpus linguistics, stylometry, digital humanities, large language models, AI detection, academic integrity]
+keywords: [AI literacy, applied linguistics, corpus linguistics, stylometry, digital humanities, large language models, tokenisation, AI detection, academic integrity]

@@ -159,12 +159,66 @@ for s in re.findall(r"[^.!?]+[.!?]+", lab["model"]):
 pd.set_option("display.max_colwidth", 90)
 pd.DataFrame(rows)"""),
     ],
+    "lab5_tokenisation.ipynb": [
+        ("md", "# Lab 5. How language models see your language\n\nToken counts for Articles 1–30 of the Universal Declaration of Human Rights in 22 languages, "
+               "with three of OpenAI's published tokenisers. The counts in `data/udhr_tokens.csv` come from `scripts/compute_tokens.mjs` (js-tiktoken, as in the browser) "
+               "and are re-checked with Python's tiktoken in `tests/check_tokens.py`."),
+        ("code", """from pathlib import Path
+import pandas as pd
+import matplotlib.pyplot as plt
+pd.set_option("display.precision", 2)
+plt.rcParams.update({"figure.dpi": 110, "axes.spines.top": False, "axes.spines.right": False})
+TEAL, OCHRE, INK = "#008f86", "#b07d12", "#1c2b3a"
+df = pd.read_csv("../data/udhr_tokens.csv")
+df[["language", "script", "tokens_r50k_base", "tokens_cl100k_base", "tokens_o200k_base",
+    "premium_r50k_base", "premium_cl100k_base", "premium_o200k_base"]].sort_values("premium_o200k_base", ascending=False)"""),
+        ("md", "## Token premium across three generations of tokeniser\n\nPremium = tokens for the language ÷ tokens for English. 1.0 means parity with English."),
+        ("code", """order = df.sort_values("premium_o200k_base")
+fig, ax = plt.subplots(figsize=(7, 6.5))
+for col, label, c in [("premium_r50k_base", "GPT-3 (2020)", "#c9d0d8"), ("premium_cl100k_base", "GPT-4 (2023)", TEAL), ("premium_o200k_base", "GPT-4o (2024)", OCHRE)]:
+    ax.scatter(order[col], order["language"], label=label, color=c, s=28, zorder=3)
+ax.axvline(1, color=INK, lw=0.8, ls="--")
+ax.set_xscale("log"); ax.set_xlabel("Token premium relative to English (log scale)")
+ax.legend(frameon=False, loc="lower right"); plt.tight_layout()"""),
+        ("md", "## Did newer tokenisers close the gap?\n\nThe ratio below shows how many times smaller each language's premium became from GPT-3 to GPT-4o."),
+        ("code", """df["improvement"] = df["premium_r50k_base"] / df["premium_o200k_base"]
+df[["language", "premium_r50k_base", "premium_o200k_base", "improvement"]].sort_values("improvement", ascending=False).head(8)"""),
+        ("md", "## Is the premium just about bytes?\n\nTokenisers work on UTF-8 bytes. Scripts such as Thai, Khmer and Burmese use three bytes per character, Latin-script English one. "
+               "The correlation below checks how far bytes per character track the premium with each tokeniser."),
+        ("code", """df["bytes_per_char"] = df["bytes"] / df["characters"]
+for col in ["premium_r50k_base", "premium_cl100k_base", "premium_o200k_base"]:
+    r = df["bytes_per_char"].corr(df[col], method="spearman")
+    print(f"{col:22s} Spearman rho with bytes per character = {r:.2f}")"""),
+        ("md", "## Count it yourself\n\nWith internet access, `tiktoken` downloads the vocabulary on first use. If `scripts/compute_tokens.mjs` has been run, the local copy in `data/ranks/` is used instead."),
+        ("code", """import base64, tiktoken
+import tiktoken_ext.openai_public as public
+
+def encoding(name):
+    local = Path("../data/ranks") / f"{name}.tiktoken"
+    if not local.exists():
+        return tiktoken.get_encoding(name)
+    def from_local(_url, expected_hash=None):
+        return {base64.b64decode(t): int(r) for t, r in (l.split(" ") for l in local.read_text().splitlines())}
+    original, public.load_tiktoken_bpe = public.load_tiktoken_bpe, from_local
+    try:
+        return tiktoken.Encoding(**getattr(public, name)())
+    finally:
+        public.load_tiktoken_bpe = original
+
+enc = encoding("o200k_base")
+sentence = Path("../data/src/udhr/vi.txt").read_text(encoding="utf-8").splitlines()[1]
+ids = enc.encode(sentence)
+print(len(ids), "tokens for Article 1 in Vietnamese")
+print([enc.decode([i]) for i in ids][:20])"""),
+    ],
 }
 
 
-def build():
+def build(only=None):
     ep = ExecutePreprocessor(timeout=300, kernel_name="python3")
     for name, cells in NOTEBOOKS.items():
+        if only and name not in only:
+            continue
         nb = nbf.v4.new_notebook()
         nb.cells = [nbf.v4.new_markdown_cell(c) if k == "md" else nbf.v4.new_code_cell(c) for k, c in cells]
         nb.metadata["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}
@@ -174,4 +228,6 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    import sys
+
+    build(sys.argv[1:] or None)
