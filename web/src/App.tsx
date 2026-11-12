@@ -6,6 +6,7 @@ import Labs from "./pages/Labs";
 import About from "./pages/About";
 import Teach from "./pages/Teach";
 import Glossary from "./pages/Glossary";
+import Start from "./pages/Start";
 import { GuideProvider, GuideToggle } from "./components/Guide";
 import { REPO_URL } from "./config";
 
@@ -31,12 +32,13 @@ function useRoute(): string[] {
 }
 
 const NAV = [
+  { href: "#start", key: "start", label: "Start here" },
   { href: "#compare", key: "compare", label: "Compare" },
   { href: "#detection", key: "detection", label: "Why detection fails" },
   { href: "#labs", key: "labs", label: "Labs" },
   { href: "#teach", key: "teach", label: "Teach with it" },
   { href: "#glossary", key: "glossary", label: "Glossary" },
-  { href: "#about", key: "about", label: "About & data" },
+  { href: "#about", key: "about", label: "About" },
 ];
 
 export default function App() {
@@ -45,6 +47,7 @@ export default function App() {
 
   useEffect(() => {
     const titles: Record<string, string> = {
+      start: "Start here",
       compare: "Compare",
       detection: "Why detection fails",
       labs: "Labs",
@@ -75,12 +78,13 @@ export default function App() {
       <main>
         <div className="shell">
           {page === "compare" && <Compare key={route[1] ?? "builtin"} initialMode={route[1] === "own" ? "own" : "builtin"} />}
+          {page === "start" && <Start />}
           {page === "detection" && <Detection />}
           {page === "labs" && <Labs lab={route[1]} />}
           {page === "teach" && <Teach />}
           {page === "about" && <About />}
           {page === "glossary" && <Glossary key={route[1] ?? ""} focus={route[1]} />}
-          {!["compare", "detection", "labs", "teach", "about", "glossary"].includes(page) && <Home />}
+          {!["start", "compare", "detection", "labs", "teach", "about", "glossary"].includes(page) && <Home />}
         </div>
       </main>
       <footer>

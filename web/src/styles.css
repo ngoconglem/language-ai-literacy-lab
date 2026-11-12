@@ -147,15 +147,15 @@ p {
 
 .nav {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   flex-wrap: wrap;
 }
 
 .nav a {
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 6px 9px;
   border-radius: 6px;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   color: var(--ink-2);
 }
 
@@ -885,3 +885,64 @@ svg text {
   font-size: 0.9rem;
   color: var(--ink-2);
 }
+
+/* Lab 3: style fingerprints */
+.essay-excerpt {
+  margin: 12px 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--rule);
+  background: var(--panel);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: var(--measure);
+  white-space: pre-line;
+}
+.verdict {
+  margin: 12px 0;
+  padding: 12px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  max-width: var(--measure);
+}
+.verdict p { margin: 0 0 8px; }
+details.reveal { margin: 10px 0 24px; }
+details.reveal p { max-width: var(--measure); }
+details.extension {
+  margin: 32px 0 8px;
+  padding: 14px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+details.extension > summary { font-size: 1rem; color: var(--ink); }
+details.extension[open] > summary { margin-bottom: 12px; }
+.chip:disabled { opacity: 0.55; cursor: default; }
+.chip[aria-pressed="true"]:disabled { opacity: 1; }
+
+/* Start-here tour */
+a.button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+a.button:hover { background: #31465a; }
+a.button:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.start-cta { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 18px 0 8px; }
+ol.tour { list-style: none; counter-reset: tour; padding: 0; margin: 28px 0; max-width: var(--measure); }
+ol.tour > li { counter-increment: tour; position: relative; padding: 0 0 26px 56px; border-left: 2px solid var(--rule); margin-left: 18px; }
+ol.tour > li:last-child { border-left-color: transparent; }
+ol.tour > li::before {
+  content: counter(tour);
+  position: absolute; left: -19px; top: -2px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--ink);
+  display: grid; place-items: center;
+  font-weight: 600; font-size: 1rem;
+}
+ol.tour h2 { font-size: 1.45rem; margin: 0 0 6px; }
+ol.tour p { margin: 0 0 8px; }
+.tour-time { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-3); font-weight: 400; margin-left: 6px; white-space: nowrap; }

@@ -1,16 +1,17 @@
 import { useMemo, useState, type ReactNode } from "react";
-import { useData, useResources, type Lab4Data, type LiteraryData } from "../lib/data";
-import { burrowsDelta, collocates, deltaToText, freq, keyness, tokens } from "../lib/text";
+import { useData, useResources, type Lab4Data } from "../lib/data";
+import { collocates, freq, keyness, tokens } from "../lib/text";
 import { Concordance } from "../components/Concordance";
-import { Heatmap, BarList } from "../components/charts";
+import { BarList } from "../components/charts";
 import { Guide, Term } from "../components/Guide";
 import { LabFrame } from "../components/LabFrame";
+import Lab3 from "./Lab3";
 import Lab5 from "./Lab5";
 
 const LABS = [
   { n: "1", title: "Concordance and frequency", blurb: "Read every occurrence of a word in its context, then count." },
   { n: "2", title: "Keyness and collocation", blurb: "Which words distinguish two groups, and which words keep company?" },
-  { n: "3", title: "Who wrote this? Burrows' Delta", blurb: "Attribute passages of nineteenth-century fiction from function words alone." },
+  { n: "3", title: "Who wrote this? Style fingerprints", blurb: "Guess whether a learner or an AI wrote an essay, then see how a computer guesses from small words." },
   { n: "4", title: "Reading an AI summary critically", blurb: "Check a model's account of Austen against the text itself." },
   { n: "5", title: "How language models see your language", blurb: "Split the same text into model tokens in 22 languages, and see who pays more." },
 ];
@@ -259,165 +260,6 @@ function Lab2() {
               </div>
             ))}
           </div>
-        </>
-      )}
-    </LabFrame>
-  );
-}
-
-// ---------------- Lab 3 ----------------
-
-function Lab3() {
-  const { data, error } = useData<LiteraryData>("literary.json");
-  const [nMfw, setNMfw] = useState(100);
-  const [target, setTarget] = useState(0);
-  const [own, setOwn] = useState("");
-
-  const res = useMemo(() => {
-    if (!data) return null;
-    const model = burrowsDelta(data.chunks, nMfw);
-    let correct = 0;
-    data.chunks.forEach((c, i) => {
-      let best = -1;
-      model.delta[i].forEach((d, j) => {
-        if (j !== i && (best < 0 || d < model.delta[i][best])) best = j;
-      });
-      if (data.chunks[best].author === c.author) correct++;
-    });
-    return { model, correct };
-  }, [data, nMfw]);
-
-  const ranking = useMemo(() => {
-    if (!data || !res) return [];
-    return res.model.delta[target]
-      .map((d, j) => ({ j, d }))
-      .filter((x) => x.j !== target)
-      .sort((a, b) => a.d - b.d)
-      .slice(0, 6);
-  }, [data, res, target]);
-
-  const ownRank = useMemo(() => {
-    if (!data || !res || own.trim().split(/\s+/).length < 300) return null;
-    const ds = deltaToText(own, data.vocab, nMfw, res.model);
-    const byAuthor = new Map<string, number[]>();
-    data.chunks.forEach((c, i) => byAuthor.set(c.author, [...(byAuthor.get(c.author) ?? []), ds[i]]));
-    return [...byAuthor.entries()]
-      .map(([a, xs]) => ({ author: a, d: xs.reduce((s, x) => s + x, 0) / xs.length }))
-      .sort((a, b) => a.d - b.d);
-  }, [data, res, own, nMfw]);
-
-  return (
-    <LabFrame
-      title="Lab 3. Who wrote this? Burrows' Delta"
-      goal="Authors leave fingerprints in the words they use without thinking: the, of, and, but, very. Burrows' Delta compares texts on these most frequent words and is a founding method of computational literary studies."
-      notebook="lab3_burrows_delta.ipynb"
-      time="40 minutes"
-      ideas={
-        <>
-          <ul>
-            <li>
-              <Term id="stylometry">Stylometry</Term> measures style with numbers. The question here is: can we tell who wrote a passage from
-              how often they use common words?
-            </li>
-            <li>
-              <Term id="delta">Burrows' Delta</Term> compares two passages on their <Term id="mfw">most frequent words</Term>. A lower Delta
-              means more similar style.
-            </li>
-            <li>
-              The corpus is nine novels by five nineteenth-century authors, cut into 5,000-word passages, all out of copyright (Project
-              Gutenberg).
-            </li>
-          </ul>
-          <p>
-            In plain terms, Delta asks: does this passage use “the”, “of”, “and”, “but” and “very” at the same rates as that passage? Writers
-            use these words without thinking, so their rates act like a fingerprint.
-          </p>
-        </>
-      }
-      steps={[
-        <>Each row and column of the matrix is a 5,000-word passage from one of nine novels by five authors. Darker means more similar. Do the authors form blocks?</>,
-        <>Choose a passage below and read its nearest neighbours. Is the closest passage by the same author? From the same book?</>,
-        <>Reduce the number of most frequent words to 20, then raise it to 300. Watch the attribution accuracy.</>,
-        <>Paste 300 or more words of a nineteenth-century text (or your own writing) and see which author it sits closest to.</>,
-      ]}
-      reflect={[
-        "Delta measures distance in style, not authorship. What else (genre, period, narrator, editing) could make two passages close?",
-        "Austen and Chesterton each contribute three books here. How might an unbalanced corpus bias the results?",
-        "If the same method were used to decide whether a student wrote an essay, what would you want to know first?",
-      ]}
-    >
-      {error && <p className="error">{error}</p>}
-      {data && res && (
-        <>
-          <div className="controls">
-            <label className="field" style={{ minWidth: 280 }}>
-              Most frequent words used: {nMfw}
-              <input type="range" min={10} max={300} step={10} value={nMfw} onChange={(e) => setNMfw(Number(e.target.value))} />
-            </label>
-            <div className="metric">
-              <div className="value" style={{ fontSize: "2.2rem" }}>
-                {res.correct} of {data.chunks.length}
-              </div>
-              <div className="label">passages whose nearest neighbour is by the same author</div>
-            </div>
-          </div>
-          <Guide title="How to read the grid">
-            <p>
-              This <Term id="heatmap">heatmap</Term> compares every passage with every other passage. Each passage has one row and one column,
-              grouped by author. The shade of each square is the Delta between the two passages: <strong>darker means more similar</strong>.
-              If style really tracks authorship, you will see dark squares along the diagonal, one block per author. Select a square or a row
-              to choose that passage for the table below.
-            </p>
-            <p>
-              The large number above counts how many passages have a <Term id="nearest-neighbour">nearest neighbour</Term> (the most similar
-              passage) by the same author. Move the slider and watch it change.
-            </p>
-          </Guide>
-          <Heatmap
-            labels={data.chunks.map((c) => c.id)}
-            groups={data.chunks.map((c) => c.author)}
-            matrix={res.model.delta}
-            highlight={target}
-            onPick={setTarget}
-          />
-          <h3>Nearest passages</h3>
-          <label className="field" style={{ maxWidth: 420 }}>
-            Passage
-            <select value={target} onChange={(e) => setTarget(Number(e.target.value))}>
-              {data.chunks.map((c, i) => (
-                <option key={c.id} value={i}>
-                  {c.id}
-                </option>
-              ))}
-            </select>
-          </label>
-          <table style={{ maxWidth: 620, marginTop: 12 }}>
-            <thead>
-              <tr>
-                <th>Closest passages</th>
-                <th className="num">Delta</th>
-                <th>Same author?</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ranking.map((r) => (
-                <tr key={r.j}>
-                  <td>{data.chunks[r.j].id}</td>
-                  <td className="num">{r.d.toFixed(3)}</td>
-                  <td>{data.chunks[r.j].author === data.chunks[target].author ? "Yes" : "No"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <h3>Test a text of your own</h3>
-          <textarea value={own} onChange={(e) => setOwn(e.target.value)} placeholder="Paste at least 300 words." aria-label="Text to attribute" />
-          {own.trim() && !ownRank && <p className="small muted">At least 300 words are needed; Delta is unreliable on short texts.</p>}
-          {ownRank && (
-            <>
-              <p className="small muted">Average Delta to each author's passages (lower is closer):</p>
-              <BarList rows={ownRank.map((r) => ({ label: r.author, value: r.d, color: "#178c84" }))} digits={3} />
-            </>
-          )}
         </>
       )}
     </LabFrame>

@@ -86,7 +86,7 @@ const PLANS: Plan[] = [
     steps: [
       { time: "Week 1, 0–25 min", what: <><a href="#lab-1">Lab 1</a>: concordance and frequency on Persuasion. Students record one pattern they found by reading lines that the count alone did not show.</> },
       { time: "Week 1, 25–50 min", what: <><a href="#lab-2">Lab 2</a>: keyness and collocation. Small groups sort the key words into topic, function, error and stance words, then report back.</> },
-      { time: "Week 2, 0–30 min", what: <><a href="#lab-3">Lab 3</a>: Burrows' Delta. Students predict what happens at 20 and at 300 most frequent words before they move the slider.</> },
+      { time: "Week 2, 0–30 min", what: <><a href="#lab-3">Lab 3</a>: style fingerprints. Students play five rounds of “Who wrote it?”, then predict what happens with 10 and with 200 most frequent words before they move the slider. Literary groups continue with the novels extension.</> },
       { time: "Week 2, 30–50 min", what: <><a href="#lab-4">Lab 4</a>: critical reading of an AI summary. Close with the reflection questions as a short written exit task.</> },
     ],
     after: (

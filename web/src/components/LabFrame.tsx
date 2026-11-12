@@ -11,6 +11,7 @@ export function LabFrame({
   children,
   reflect,
   notebook,
+  notebookLabel,
 }: {
   title: string;
   goal: string;
@@ -20,6 +21,7 @@ export function LabFrame({
   children: ReactNode;
   reflect: string[];
   notebook: string;
+  notebookLabel?: string;
 }) {
   return (
     <article>
@@ -40,7 +42,7 @@ export function LabFrame({
         ))}
       </ul>
       <p className="small">
-        <a href={notebookUrl(notebook)}>Reproduce this lab in Python ({notebook})</a>
+        <a href={notebookUrl(notebook)}>{notebookLabel ?? "Reproduce this lab in Python"} ({notebook})</a>
       </p>
     </article>
   );
