@@ -117,7 +117,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: "Words beyond the 2,000 most common",
     plain: "The percentage of words that are not among the 2,000 most frequent English words. A rough sign of less common, more sophisticated vocabulary.",
     rule: "In this lab, most learner essays sit between 5% and 15% and most model essays around 20%. Misspellings also count as off-list, so check the words themselves before concluding anything.",
-    detail: "The word list comes from the wordfreq project (Speer, 2022), which combines frequencies from subtitles, Wikipedia, books, news and the web.",
+    detail: "The 2,000-word boundary follows the usual definition of high-frequency vocabulary (Nation, 2001, Learning vocabulary in another language, Cambridge University Press). The word list comes from the wordfreq project (Speer, 2022), which combines frequencies from subtitles, Wikipedia, books, news and the web.",
     topic: "Style measures",
   },
   {
@@ -136,7 +136,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     id: "cv",
     term: "Sentence-length variation (coefficient of variation)",
     plain: "How uneven sentence lengths are. It is the standard deviation of sentence length divided by the average, so short and long texts can be compared.",
-    rule: "Around 0.3 means fairly even sentences; 0.6 or more means a mix of very short and very long ones. Model essays here range from 0.3 to 0.5; learner essays spread much more widely.",
+    rule: "Higher values mean a bigger mix of short and long sentences. There is no standard cut-off; in this lab, model essays range from about 0.3 to 0.5 and learner essays spread much more widely.",
     topic: "Style measures",
   },
   {
@@ -232,8 +232,9 @@ export const GLOSSARY: GlossaryEntry[] = [
     id: "effect-size",
     term: "Effect size (how much groups overlap)",
     plain: "How big a difference between two groups is, compared with how much texts vary within each group. A small effect means the groups overlap heavily even if their averages differ.",
+    rule: "Cohen (1988): d of 0.2 is small, 0.5 medium and 0.8 large. Sawilowsky (2009) added 1.2 very large and 2.0 huge.",
     detail:
-      "The Compare page describes overlap using Cohen's d: the difference between the group averages divided by the pooled standard deviation. Below 0.5 the groups overlap heavily; 0.5 to 1.2 they partly overlap; above 1.2 they barely overlap.",
+      "The Compare page uses Cohen's d: the difference between the group averages divided by the pooled standard deviation. Even a large difference (d = 0.8) leaves the two groups overlapping a great deal; only at d = 2.0 do they overlap little. Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed.). Erlbaum. Sawilowsky, S. S. (2009). New effect size rules of thumb. Journal of Modern Applied Statistical Methods, 8(2), 597–599.",
     topic: "Comparing groups",
   },
 
@@ -242,7 +243,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     id: "concordance",
     term: "Concordance (KWIC)",
     plain: "A list of every place a word appears, each shown in the middle of a line with the words before and after it. KWIC stands for “key word in context”.",
-    rule: "Read at least 20 lines before drawing a conclusion, and sort by the word after (or before) to make patterns easy to spot.",
+    rule: "Read many lines, not just the first few, before drawing a conclusion, and sort by the word after (or before) to make patterns easy to spot.",
     topic: "Words in context",
   },
   {
@@ -267,7 +268,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     id: "logdice",
     term: "logDice",
     plain: "A score for how strongly two words are attached to each other. It rewards collocates that appear mostly near the node word and is not distorted by corpus size.",
-    rule: "The maximum is 14. Above about 7 is a fairly strong collocation; each extra point roughly doubles the strength.",
+    rule: "The maximum is 14. There is no agreed cut-off, so compare collocates within the same list. Because the score is on a base-2 log scale, one point higher means roughly twice the association.",
     detail: "Rychlý, P. (2008). A lexicographer-friendly association score. Proceedings of Recent Advances in Slavonic Natural Language Processing, 6–9.",
     topic: "Words in context",
   },
@@ -275,7 +276,8 @@ export const GLOSSARY: GlossaryEntry[] = [
     id: "mi",
     term: "Mutual information (MI)",
     plain: "Another attachment score. It compares how often two words occur together with how often they would by chance. It tends to favour rare words that happen to co-occur once or twice.",
-    rule: "MI of 3 or more is a common threshold for a meaningful collocation.",
+    rule: "MI of 3 or more is a widely used threshold for a meaningful collocation (Hunston, 2002).",
+    detail: "Hunston, S. (2002). Corpora in applied linguistics. Cambridge University Press.",
     topic: "Words in context",
   },
   {

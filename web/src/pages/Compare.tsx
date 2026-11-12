@@ -27,7 +27,21 @@ function describe(a: number[], b: number[]) {
   const v = (xs: number[], m: number) => xs.reduce((s, x) => s + (x - m) ** 2, 0);
   const pooled = a.length + b.length > 2 ? Math.sqrt((v(a, ma) + v(b, mb)) / (a.length + b.length - 2)) : 0;
   const d = pooled > 0 ? Math.abs(ma - mb) / pooled : 0;
-  const overlap = a.length < 2 || b.length < 2 ? null : d < 0.5 ? "overlap heavily" : d < 1.2 ? "partly overlap" : "barely overlap";
+  // Size labels: Cohen (1988) for small/medium/large; Sawilowsky (2009) for very large/huge.
+  const overlap =
+    a.length < 2 || b.length < 2
+      ? null
+      : d < 0.2
+        ? "negligible difference: the groups overlap almost completely"
+        : d < 0.5
+          ? "small difference: the groups overlap heavily"
+          : d < 0.8
+            ? "medium difference: the groups still overlap a lot"
+            : d < 1.2
+              ? "large difference, though the groups still overlap"
+              : d < 2
+                ? "very large difference: the groups overlap only partly"
+                : "huge difference: the groups overlap little";
   return { ma, mb, d, overlap };
 }
 
@@ -337,7 +351,7 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
                       {dsc.overlap && (
                         <>
                           {" "}
-                          The groups <Term id="effect-size">{dsc.overlap}</Term>.
+                          <Term id="effect-size">Effect size</Term> d = {dsc.d.toFixed(2)}, a {dsc.overlap}.
                         </>
                       )}
                     </p>
