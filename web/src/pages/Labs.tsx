@@ -4,6 +4,7 @@ import { burrowsDelta, collocates, deltaToText, freq, keyness, tokens } from "..
 import { Concordance } from "../components/Concordance";
 import { Heatmap, BarList } from "../components/charts";
 import { notebookUrl } from "../config";
+import { Guide, Term } from "../components/Guide";
 
 const LABS = [
   { n: "1", title: "Concordance and frequency", blurb: "Read every occurrence of a word in its context, then count." },
@@ -18,11 +19,30 @@ const STOP = new Set(
   ),
 );
 
-function LabFrame({ title, goal, steps, children, reflect, notebook }: { title: string; goal: string; steps: ReactNode[]; children: ReactNode; reflect: string[]; notebook: string }) {
+function LabFrame({
+  title,
+  goal,
+  time,
+  ideas,
+  steps,
+  children,
+  reflect,
+  notebook,
+}: {
+  title: string;
+  goal: string;
+  time: string;
+  ideas: ReactNode;
+  steps: ReactNode[];
+  children: ReactNode;
+  reflect: string[];
+  notebook: string;
+}) {
   return (
     <article>
       <h2 style={{ marginTop: 0.4 + "em" }}>{title}</h2>
       <p className="lede">{goal}</p>
+      <Guide title={`Before you start (about ${time})`}>{ideas}</Guide>
       <h3>Steps</h3>
       <ol className="lab-steps">
         {steps.map((s, i) => (
@@ -79,6 +99,26 @@ function Lab1() {
       title="Lab 1. Concordance and frequency"
       goal="Distant reading starts with counting, but counts mean little until you read the lines behind them. This lab moves between the two."
       notebook="lab1_concordance_frequency.ipynb"
+      time="30 minutes"
+      ideas={
+        <>
+          <p>You need no prior experience. Three ideas are enough:</p>
+          <ul>
+            <li>
+              A <Term id="corpus">corpus</Term> is the collection of texts you are studying. Here you can choose Jane Austen's novel{" "}
+              <em>Persuasion</em>, 60 learner essays or 24 AI essays.
+            </li>
+            <li>
+              A <Term id="concordance">concordance</Term> shows every occurrence of a word (the <Term id="node">node word</Term>) in the middle
+              of a line, with its context either side.
+            </li>
+            <li>
+              Counts are given <Term id="per-1000">per 1,000 words</Term>, so corpora of different sizes can be compared.
+            </li>
+          </ul>
+          <p>Type a word in the search box, then use the sort buttons above the concordance to group similar lines together.</p>
+        </>
+      }
       steps={[
         <>Start with Austen's <em>Persuasion</em> and the word “persuaded”. Sort by the word after it. Who is persuaded, and to do what?</>,
         <>Search for “felt”, then for “thought”. Read twenty lines of each. What does the novel let us know about characters' minds, and how?</>,
@@ -112,6 +152,13 @@ function Lab1() {
       )}
       <Concordance docs={docs} node={node} showDoc={corpus !== "persuasion"} />
       <h3>Most frequent words</h3>
+      <Guide>
+        <p>
+          The bars rank the 20 most frequent words. With “Hide common function words” ticked, small grammatical words (
+          <Term id="function-words">function words</Term> such as the, and, of) are removed, leaving words that say more about the topic. Untick
+          it: the list then looks much the same for almost any English text.
+        </p>
+      </Guide>
       <label className="small" style={{ display: "inline-flex", gap: 8, alignItems: "center", marginBottom: 12 }}>
         <input type="checkbox" checked={hideStop} onChange={(e) => setHideStop(e.target.checked)} /> Hide common function words
       </label>
@@ -145,6 +192,23 @@ function Lab2() {
       title="Lab 2. Keyness and collocation"
       goal="Keyness finds the words that most distinguish one corpus from another. Collocation finds the words that habitually travel with a word. Together they sketch a group's characteristic phrasing."
       notebook="lab2_keyness_collocation.ipynb"
+      time="40 minutes"
+      ideas={
+        <ul>
+          <li>
+            <Term id="keyness">Keyness</Term> lists the words that are unusually frequent in one group compared with the other. Here the
+            groups are the learner essays and the AI essays.
+          </li>
+          <li>
+            <Term id="collocation">Collocates</Term> are words that keep appearing near a given word, within a <Term id="window">window</Term>{" "}
+            of a few words either side.
+          </li>
+          <li>
+            Collocates are ranked by <Term id="logdice">logDice</Term>, a score of how strongly two words are attached (maximum 14). The table
+            also shows <Term id="mi">MI</Term>, an older score that favours rare words.
+          </li>
+        </ul>
+      }
       steps={[
         <>Scan the keyness lists. Sort the words into rough groups: topic words, function words, misspellings, stance and evaluation. Which group dominates each side?</>,
         <>Look up two key words from each side on the Compare page to read them in context.</>,
@@ -179,6 +243,13 @@ function Lab2() {
             ))}
           </div>
           <h3>Collocates</h3>
+          <Guide>
+            <p>
+              Type a node word and compare the two tables. “Together” is how many times the collocate appears within the window around the
+              node word. A word near the top of both tables is a shared habit; a word in only one table is distinctive of that group. Start
+              with “technology”, which both groups write about, and compare what they say about it.
+            </p>
+          </Guide>
           <div className="controls">
             <label className="field">
               Node word
@@ -284,6 +355,29 @@ function Lab3() {
       title="Lab 3. Who wrote this? Burrows' Delta"
       goal="Authors leave fingerprints in the words they use without thinking: the, of, and, but, very. Burrows' Delta compares texts on these most frequent words and is a founding method of computational literary studies."
       notebook="lab3_burrows_delta.ipynb"
+      time="40 minutes"
+      ideas={
+        <>
+          <ul>
+            <li>
+              <Term id="stylometry">Stylometry</Term> measures style with numbers. The question here is: can we tell who wrote a passage from
+              how often they use common words?
+            </li>
+            <li>
+              <Term id="delta">Burrows' Delta</Term> compares two passages on their <Term id="mfw">most frequent words</Term>. A lower Delta
+              means more similar style.
+            </li>
+            <li>
+              The corpus is nine novels by five nineteenth-century authors, cut into 5,000-word passages, all out of copyright (Project
+              Gutenberg).
+            </li>
+          </ul>
+          <p>
+            In plain terms, Delta asks: does this passage use “the”, “of”, “and”, “but” and “very” at the same rates as that passage? Writers
+            use these words without thinking, so their rates act like a fingerprint.
+          </p>
+        </>
+      }
       steps={[
         <>Each row and column of the matrix is a 5,000-word passage from one of nine novels by five authors. Darker means more similar. Do the authors form blocks?</>,
         <>Choose a passage below and read its nearest neighbours. Is the closest passage by the same author? From the same book?</>,
@@ -311,6 +405,18 @@ function Lab3() {
               <div className="label">passages whose nearest neighbour is by the same author</div>
             </div>
           </div>
+          <Guide title="How to read the grid">
+            <p>
+              This <Term id="heatmap">heatmap</Term> compares every passage with every other passage. Each passage has one row and one column,
+              grouped by author. The shade of each square is the Delta between the two passages: <strong>darker means more similar</strong>.
+              If style really tracks authorship, you will see dark squares along the diagonal, one block per author. Select a square or a row
+              to choose that passage for the table below.
+            </p>
+            <p>
+              The large number above counts how many passages have a <Term id="nearest-neighbour">nearest neighbour</Term> (the most similar
+              passage) by the same author. Move the slider and watch it change.
+            </p>
+          </Guide>
           <Heatmap
             labels={data.chunks.map((c) => c.id)}
             groups={data.chunks.map((c) => c.author)}
@@ -403,6 +509,20 @@ function Lab4() {
       title="Lab 4. Reading an AI summary critically"
       goal="Language models summarise fluently, mixing what a text says with what is commonly said about it. This lab separates the two, using word overlap as a starting point, not a verdict."
       notebook="lab4_critical_ai_reading.ipynb"
+      time="30 minutes"
+      ideas={
+        <>
+          <p>
+            You will compare a passage from Austen's <em>Persuasion</em> (Captain Wentworth's letter to Anne Elliot) with a summary written by
+            an AI <Term id="llm">large language model</Term>.
+          </p>
+          <p>
+            For each sentence of the summary, the lab measures <Term id="overlap">content-word overlap</Term>: how many of its meaningful
+            words also appear in the letter. Overlap is a clue, not a verdict. A sentence can share many words with the letter and still add
+            something it never says, and a faithful paraphrase can share very few.
+          </p>
+        </>
+      }
       steps={[
         <>Read Captain Wentworth's letter, then the model's summary.</>,
         <>Select each sentence of the summary. The words it shares with the letter are highlighted in the letter, with an overlap score.</>,

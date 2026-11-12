@@ -6,6 +6,30 @@ import { StripPlot } from "../components/charts";
 import { Concordance } from "../components/Concordance";
 import { Highlight } from "../components/Highlight";
 import { CorpusInput, type UserCorpus } from "../components/CorpusInput";
+import { Guide, Term } from "../components/Guide";
+
+const TERM_FOR: Record<string, string> = {
+  meanWordLength: "word-length",
+  mattr: "mattr",
+  offListPct: "off-list",
+  meanSentenceLength: "sentence-length",
+  sentenceLengthCV: "cv",
+  hedges: "hedge",
+  boosters: "booster",
+  connectives: "connective",
+  selfMention: "self-mention",
+};
+
+function describe(a: number[], b: number[]) {
+  const mean = (xs: number[]) => xs.reduce((s, x) => s + x, 0) / Math.max(1, xs.length);
+  const ma = mean(a);
+  const mb = mean(b);
+  const v = (xs: number[], m: number) => xs.reduce((s, x) => s + (x - m) ** 2, 0);
+  const pooled = a.length + b.length > 2 ? Math.sqrt((v(a, ma) + v(b, mb)) / (a.length + b.length - 2)) : 0;
+  const d = pooled > 0 ? Math.abs(ma - mb) / pooled : 0;
+  const overlap = a.length < 2 || b.length < 2 ? null : d < 0.5 ? "overlap heavily" : d < 1.2 ? "partly overlap" : "barely overlap";
+  return { ma, mb, d, overlap };
+}
 
 const A_COLOR = "#008f86";
 const B_COLOR = "#b07d12";
@@ -119,6 +143,31 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
         point: you can see exactly why two texts differ, and decide whether the difference means anything.
       </p>
 
+      <Guide title="How to use this page">
+        <ol>
+          <li>
+            <strong>Choose two groups of texts.</strong> Start with the built-in essays (learners against the AI model), or load two sets of
+            your own.
+          </li>
+          <li>
+            <strong>Scan the nine measures.</strong> Each row measures one feature of style, such as word length or how often writers hedge.
+            The plain-language sentence under each heading tells you which group scores higher and how much the groups overlap.
+          </li>
+          <li>
+            <strong>Read the texts behind the dots.</strong> Select any dot, especially one far from its group, to read that text with its
+            connectives highlighted.
+          </li>
+          <li>
+            <strong>Check the words.</strong> Further down, the key-word tables list the words that most distinguish each group. Select a
+            word to see every line it appears in.
+          </li>
+        </ol>
+        <p>
+          A difference on this page describes these texts, not all learners or all AI writing. Ask what else differs between the groups:
+          the task, the topic, the writers' age, the instructions given to the model.
+        </p>
+      </Guide>
+
       <div className="chips" role="group" aria-label="Which texts to compare" style={{ marginTop: 8 }}>
         <button className="chip" aria-pressed={mode === "builtin"} onClick={() => setMode("builtin")}>
           Use the built-in essays
@@ -177,6 +226,24 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
             <CorpusInput side="Set A" color={A_COLOR} value={ownA} onChange={setOwnA} />
             <CorpusInput side="Set B" color={B_COLOR} value={ownB} onChange={setOwnB} />
           </div>
+          <Guide title="Preparing your texts">
+            <ul>
+              <li>
+                <strong>Files:</strong> plain text files (.txt), one text per file, or a spreadsheet saved as .csv with one text per row and a
+                column called “text”. You can select many files at once.
+              </li>
+              <li>
+                <strong>Pasting:</strong> paste several texts into the box, with a line containing only <code>---</code> between them.
+              </li>
+              <li>
+                <strong>Names:</strong> give each set a short name (for example “Week 2 drafts” and “ChatGPT”); it labels the charts.
+              </li>
+              <li>
+                <strong>Saving results:</strong> “Download measures (CSV)” saves every number on the page for each text, for use in Excel, R
+                or SPSS.
+              </li>
+            </ul>
+          </Guide>
           <p className="small muted" style={{ marginBottom: 0 }}>
             Tips: texts under 100 words give unstable values; at least ten texts per set make the averages worth comparing. Remove names and
             other identifying details from student work before you use it.
@@ -213,6 +280,28 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
             </div>
           </div>
 
+          <Guide title="How to read the dot charts">
+            <ul>
+              <li>
+                Each row is a <Term id="strip-plot">strip plot</Term>: one dot per text, placed along the line by its value. Further right
+                means a higher value.
+              </li>
+              <li>
+                The short dark tick across each group is the <Term id="group-average">group average</Term>. Hover over or select a dot to see
+                which text it is.
+              </li>
+              <li>
+                Look at the <strong>spread</strong>, not just the averages. If the two clouds of dots overlap, many texts in one group look like
+                texts in the other, even when the averages differ. That is why a single measure cannot tell you who wrote a text.
+              </li>
+              <li>
+                Dots far from the rest are <Term id="outlier">outliers</Term>. Read them: they often reveal a quirk of the measure (a missing
+                full stop, a switch into another language) rather than a quirk of the writer.
+              </li>
+              <li>Open “Read with caution” under each measure for its known weaknesses.</li>
+            </ul>
+          </Guide>
+
           <section aria-label="Style measures">
             {FEATURES.map((f) => {
               const groups = [
@@ -220,15 +309,37 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
                 { label: labelB, color: B_COLOR, points: sets.B.map((d) => ({ id: d.id, v: profiles.get(d.id)![f.key], detail: d.detail })) },
               ];
               if (ownProfile) groups.push({ label: "Your text", color: YOU_COLOR, points: [{ id: "Your text", v: ownProfile[f.key], detail: "" }] });
-              const mean = (pts: { v: number }[]) => pts.reduce((s, p) => s + p.v, 0) / Math.max(1, pts.length);
+              const dsc = describe(
+                groups[0].points.map((p) => p.v),
+                groups[1].points.map((p) => p.v),
+              );
+              const same = Math.abs(dsc.ma - dsc.mb) < Math.pow(10, -f.digits) / 2;
+              const higher = dsc.ma > dsc.mb ? labelA : labelB;
               return (
                 <div className="feature-row" key={f.key}>
                   <div>
-                    <h3>{f.label}</h3>
+                    <h3>
+                      <Term id={TERM_FOR[f.key]}>{f.label}</Term>
+                    </h3>
                     <p>{f.what}</p>
                     <p>
-                      Average: <strong style={{ color: "var(--ink)" }}>{mean(groups[0].points).toFixed(f.digits)}</strong> vs{" "}
-                      <strong style={{ color: "var(--ink)" }}>{mean(groups[1].points).toFixed(f.digits)}</strong> {f.unit}
+                      Average: <strong style={{ color: "var(--ink)" }}>{dsc.ma.toFixed(f.digits)}</strong> vs{" "}
+                      <strong style={{ color: "var(--ink)" }}>{dsc.mb.toFixed(f.digits)}</strong> {f.unit}
+                    </p>
+                    <p className="verdict">
+                      {same ? (
+                        <>The two groups have the same average.</>
+                      ) : (
+                        <>
+                          Higher on average: <strong>{higher}</strong>.
+                        </>
+                      )}
+                      {dsc.overlap && (
+                        <>
+                          {" "}
+                          The groups <Term id="effect-size">{dsc.overlap}</Term>.
+                        </>
+                      )}
                     </p>
                     <details>
                       <summary>Read with caution</summary>
@@ -259,11 +370,34 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
           <h2>Words that set the groups apart</h2>
           <div className="prose">
             <p>
-              Keyness compares how often each word appears in one group relative to the other. Log-likelihood says whether the difference is
-              bigger than chance (only words above 6.63, p &lt; .01, are listed). Log ratio says how big it is: +1 means twice as frequent in
-              the first group, −1 twice as frequent in the second. Select a word to see it in context.
+              <Term id="keyness">Keyness</Term> compares how often each word appears in one group relative to the other.{" "}
+              <Term id="log-likelihood">Log-likelihood</Term> says whether the difference is bigger than chance (only words above 6.63,{" "}
+              <Term id="p-value">p &lt; .01</Term>, are listed). <Term id="log-ratio">Log ratio</Term> says how big it is: +1 means twice as
+              frequent in the first group, −1 twice as frequent in the second. Select a word to see it in context.
             </p>
           </div>
+          {(() => {
+            const ex = keys.forA[0] ?? keys.forB[0];
+            if (!ex) return null;
+            const inA = ex.logRatio > 0;
+            const times = Math.pow(2, Math.abs(ex.logRatio));
+            return (
+              <Guide title="Reading one row: a worked example">
+                <p>
+                  Take “<strong>{ex.word}</strong>”. The Count column shows it appears <strong>{ex.f1}</strong> times in {labelA} and{" "}
+                  <strong>{ex.f2}</strong> times in {labelB}. Raw counts can mislead when one group has more words, so the log ratio compares
+                  them per word: {inA ? "+" : "−"}
+                  {Math.abs(ex.logRatio).toFixed(2)} means “{ex.word}” is about{" "}
+                  <strong>{times >= 10 ? Math.round(times) : times.toFixed(1)} times</strong> as frequent in {inA ? labelA : labelB}. Its
+                  log-likelihood of {ex.ll.toFixed(1)} is well above 6.63, so a difference this large is very unlikely to be chance.
+                </p>
+                <p>
+                  Then ask <em>why</em>. Sort the key words into rough kinds: topic words (the essay question), function words, misspellings,
+                  and words of stance or evaluation. Select “{ex.word}” to read it in context before deciding what it shows.
+                </p>
+              </Guide>
+            );
+          })()}
           <div className="two-col">
             {(
               [
@@ -282,7 +416,7 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
                     <thead>
                       <tr>
                         <th>Word</th>
-                        <th className="num">Count</th>
+                        <th className="num">Count (first / second)</th>
                         <th className="num">Log-likelihood</th>
                         <th className="num">Log ratio</th>
                       </tr>
@@ -314,6 +448,13 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
           {node && (
             <section style={{ marginTop: 24 }}>
               <h3>“{node}” in context</h3>
+              <Guide title="How to read a concordance">
+                <p>
+                  This is a <Term id="concordance">concordance</Term>: every line containing “{node}”, lined up so the word sits in the middle
+                  column. Read down the words just before and just after it. Repeated patterns (the same verb before it, the same kind of word
+                  after it) show how each group typically uses the word, which a count alone cannot.
+                </p>
+              </Guide>
               <div className="two-col">
                 {(
                   [
@@ -337,7 +478,8 @@ export default function Compare({ initialMode = "builtin" }: { initialMode?: Mod
       <h2>Add a single text</h2>
       <div className="prose">
         <p>
-          Paste at least 30 words. Your text appears as an ink dot on every measure above. Nothing leaves your browser: all analysis runs on
+          Want to see where a single piece of writing falls? Paste at least 30 words (a student paragraph, your own writing, or an AI
+          response). Your text appears as a dark navy dot on every chart above. Nothing leaves your browser: all analysis runs on
           this page.
         </p>
         <textarea value={own} onChange={(e) => setOwn(e.target.value)} placeholder="Paste a paragraph or an essay here." aria-label="Your text" />

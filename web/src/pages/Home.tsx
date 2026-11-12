@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { useResources, FEATURE_BY_KEY } from "../lib/data";
 import { Highlight } from "../components/Highlight";
+import { Guide, Term } from "../components/Guide";
 
 const SPECIMEN = { learner: "ELL-02B36EBD5C66", model: "LLM-DL-02" };
 
 type Lens = "hedges" | "boosters" | "connectives" | "selfMention" | "offList";
 
-const LENSES: { key: Lens; label: string }[] = [
-  { key: "offList", label: "Beyond the 2,000 most common words" },
-  { key: "connectives", label: "Connectives" },
-  { key: "hedges", label: "Hedges" },
-  { key: "boosters", label: "Boosters" },
-  { key: "selfMention", label: "Self-mention" },
+const LENSES: { key: Lens; label: string; plain: string }[] = [
+  { key: "offList", label: "Beyond the 2,000 most common words", plain: "Highlights less common words: those outside the 2,000 most frequent words of English." },
+  { key: "connectives", label: "Connectives", plain: "Highlights signpost words that link ideas, such as however, therefore and for example." },
+  { key: "hedges", label: "Hedges", plain: "Highlights words that soften a claim, such as may, might and I think." },
+  { key: "boosters", label: "Boosters", plain: "Highlights words that strengthen a claim, such as clearly, really and must." },
+  { key: "selfMention", label: "Self-mention", plain: "Highlights first-person words: I, me, my, we, our, us." },
 ];
 
 function excerpt(text: string, maxWords = 115): string {
@@ -40,6 +41,19 @@ export default function Home() {
           model, and asks what those numbers can honestly tell us.
         </p>
 
+        <Guide title="What you are looking at">
+          <p>
+            Two short essays answer the same question: one by a secondary-school English language learner, one by an AI{" "}
+            <Term id="llm">large language model</Term>. Choose a button to highlight one kind of word in both. The number under each essay
+            counts that kind of word across the whole essay, adjusted for length (<Term id="per-1000">per 1,000 words</Term>), so the two can
+            be compared fairly.
+          </p>
+          <p>
+            Try <em>Beyond the 2,000 most common words</em> first: the model's essay is full of highlighted words. Then ask whether that
+            makes it better writing, or just different.
+          </p>
+        </Guide>
+
         <div className="specimen" aria-live="polite">
           <div className="specimen-head">
             <div className="chips" role="group" aria-label="Choose what to highlight">
@@ -50,6 +64,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <p className="small muted" style={{ margin: "0 0 12px" }}>{LENSES.find((l) => l.key === lens)!.plain}</p>
           {error && <p className="error">{error}</p>}
           {data && (
             <div className="specimen-cols">
@@ -84,7 +99,33 @@ export default function Home() {
         </div>
       </section>
 
-      <h2>Start here</h2>
+      <h2>New here? Try this in ten minutes</h2>
+      <p style={{ maxWidth: "var(--measure)" }}>
+        No coding or statistics background is needed. Each page explains its terms as you go: words with a dotted underline open a short
+        definition, and the shaded “how to read this” boxes walk you through every chart. Experienced users can hide those boxes with the{" "}
+        <strong>Guidance</strong> switch at the top of the page.
+      </p>
+      <ol className="quickstart">
+        <li>
+          <strong>Look closely</strong>
+          Switch between the highlight buttons above and notice which kinds of words each writer uses.
+        </li>
+        <li>
+          <strong>Look at a distance</strong>
+          Open <a href="#compare">Compare</a>. Each dot is one essay. Find a measure where the two groups barely overlap, and one where they
+          overlap a lot.
+        </li>
+        <li>
+          <strong>Test a claim</strong>
+          Open <a href="#detection">Why detection fails</a> and press “Catch every model essay”. Count how many real learners are now accused.
+        </li>
+        <li>
+          <strong>Try your own text</strong>
+          Paste a paragraph of your own writing at the bottom of the Compare page and see where it falls among the dots.
+        </li>
+      </ol>
+
+      <h2>Everything on the site</h2>
       <ul className="index">
         <li>
           <a href="#compare">
@@ -129,6 +170,12 @@ export default function Home() {
               Where every text comes from, how each measure is computed, what the lab cannot tell you, and Python notebooks that reproduce
               every number on this site.
             </span>
+          </a>
+        </li>
+        <li>
+          <a href="#glossary">
+            <span className="index-title">Glossary</span>
+            <span className="index-desc">Every term on the site in plain language, with rules of thumb for reading the numbers.</span>
           </a>
         </li>
       </ul>

@@ -5,6 +5,8 @@ import Detection from "./pages/Detection";
 import Labs from "./pages/Labs";
 import About from "./pages/About";
 import Teach from "./pages/Teach";
+import Glossary from "./pages/Glossary";
+import { GuideProvider, GuideToggle } from "./components/Guide";
 import { REPO_URL } from "./config";
 
 function useRoute(): string[] {
@@ -33,6 +35,7 @@ const NAV = [
   { href: "#detection", key: "detection", label: "Why detection fails" },
   { href: "#labs", key: "labs", label: "Labs" },
   { href: "#teach", key: "teach", label: "Teach with it" },
+  { href: "#glossary", key: "glossary", label: "Glossary" },
   { href: "#about", key: "about", label: "About & data" },
 ];
 
@@ -46,13 +49,14 @@ export default function App() {
       detection: "Why detection fails",
       labs: "Labs",
       teach: "Teach with it",
+      glossary: "Glossary",
       about: "About & data",
     };
     document.title = titles[page] ? `${titles[page]} · Language & AI Literacy Lab` : "Language & AI Literacy Lab: Linguistic analysis of human and AI writing";
   }, [page]);
 
   return (
-    <>
+    <GuideProvider>
       <header className="topbar">
         <div className="shell">
           <a className="wordmark" href="#">
@@ -65,6 +69,7 @@ export default function App() {
               </a>
             ))}
           </nav>
+          <GuideToggle />
         </div>
       </header>
       <main>
@@ -74,7 +79,8 @@ export default function App() {
           {page === "labs" && <Labs lab={route[1]} />}
           {page === "teach" && <Teach />}
           {page === "about" && <About />}
-          {!["compare", "detection", "labs", "teach", "about"].includes(page) && <Home />}
+          {page === "glossary" && <Glossary key={route[1] ?? ""} focus={route[1]} />}
+          {!["compare", "detection", "labs", "teach", "about", "glossary"].includes(page) && <Home />}
         </div>
       </main>
       <footer>
@@ -88,6 +94,6 @@ export default function App() {
           </span>
         </div>
       </footer>
-    </>
+    </GuideProvider>
   );
 }

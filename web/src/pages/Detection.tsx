@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useResources, FEATURE_BY_KEY, CONDITION_LABEL, type Essay, type FeatureKey } from "../lib/data";
 import { StripPlot, BarList } from "../components/charts";
 import { essayDetail } from "../lib/groups";
+import { Guide, Term } from "../components/Guide";
 
 // The naive detector: average of signed z-scores on five features that differ most between
 // default model output and learner essays. Positive = more "machine-like" by these features.
@@ -89,21 +90,48 @@ export default function Detection() {
     <>
       <h1>Why detection fails</h1>
       <p className="lede">
-        Here is a deliberately simple AI-writing detector built from five measures on this site. On default model output it looks impressive.
+        Here is a deliberately simple <Term id="detector">AI-writing detector</Term> built from five measures on this site. On default model output it looks impressive.
         Then the prompt changes by one sentence.
       </p>
 
+      <Guide title="The idea in one paragraph">
+        <p>
+          Many people assume AI writing has tell-tale features: longer words, more varied vocabulary, very even sentences, no “I”. This page
+          builds a detector from exactly those features and tests it on 84 essays whose authorship we know: 60 by English language learners
+          and 24 by an AI model. You will see that it works well on ordinary AI output, fails as soon as the AI is asked to write like a
+          student, and that trying to fix it means wrongly accusing real students.
+        </p>
+      </Guide>
+
       <div className="panel prose">
         <p>
-          <strong>How the detector scores an essay.</strong> For each of five measures, the essay's value is converted to a z-score (how many
-          standard deviations it sits from the average of all 84 essays). The score is the average of those five z-scores, signed so that
-          higher means {DETECTOR.map((d) => d.reads).join(", ")}. Essays at or above the threshold are flagged as machine-written.
+          <strong>How the detector scores an essay.</strong> For each of five measures, the essay's value is converted to a{" "}
+          <Term id="z-score">z-score</Term> (how many <Term id="sd">standard deviations</Term> it sits from the average of all 84 essays). The score is the average of those five z-scores, signed so that
+          higher means {DETECTOR.map((d) => d.reads).join(", ")}. Essays at or above the <Term id="threshold">threshold</Term> are flagged
+          as machine-written. A score of 0 is a perfectly average essay; most scores fall between −1.5 and +1.5.
         </p>
         <p className="small muted">
           Measures: {DETECTOR.map((d) => FEATURE_BY_KEY[d.key].label.toLowerCase()).join("; ")}. Real detectors use language-model
           probabilities rather than these features, but they share the logic: text that looks statistically “too smooth” is flagged.
         </p>
       </div>
+
+      <Guide title="What the three numbers mean">
+        <ul>
+          <li>
+            <strong>Model essays flagged</strong>: how much AI writing the detector catches. Higher is better.
+          </li>
+          <li>
+            <strong>Learner essays wrongly flagged</strong>: <Term id="false-positive">false positives</Term>, real students accused of using
+            AI. This should be as close to 0% as possible.
+          </li>
+          <li>
+            <strong>“Write as a 10th-grader” essays caught</strong>: AI essays produced with one extra sentence in the prompt. The ones not
+            caught are <Term id="false-negative">misses</Term>.
+          </li>
+        </ul>
+        <p>All three change as you move the threshold slider below.</p>
+      </Guide>
 
       <div className="metrics" aria-live="polite">
         <div className="metric">
@@ -160,6 +188,25 @@ export default function Detection() {
         height={38}
       />
       <p className="small muted">Each dot is one essay; the ink tick is the group average; the dashed line is the threshold.</p>
+      <Guide title="Try this">
+        <ol>
+          <li>
+            Press <strong>Best overall accuracy</strong>. Teal rows are learners, gold rows are the AI. Dots to the right of the dashed line
+            are flagged. Notice that every ordinary AI essay is flagged, but the “as a 10th-grader” essays sit among the
+            learners.
+          </li>
+          <li>
+            Press <strong>Catch every model essay</strong>. The line moves left until every gold dot is flagged. Count the teal dots that
+            are now flagged too: each one is a student wrongly accused.
+          </li>
+          <li>
+            Press <strong>Never flag a learner</strong>. Now no student is accused, but read how many AI essays slip through.
+          </li>
+          <li>
+            Look at the bars below for each setting. Which proficiency group is flagged most often? Why might that be unfair?
+          </li>
+        </ol>
+      </Guide>
 
       <h2>Who gets flagged at this threshold</h2>
       <BarList rows={rowStats.map((r) => ({ label: `${r.label} (n = ${r.n})`, value: pct(r.flagged, r.n), color: r.color }))} max={100} suffix="%" />
@@ -167,7 +214,8 @@ export default function Detection() {
       <h2>What this shows</h2>
       <div className="prose">
         <p>
-          At the best-performing threshold the detector classifies {(model.bestAcc * 100).toFixed(0)}% of essays correctly, and it flags
+          At the best-performing threshold the detector classifies {(model.bestAcc * 100).toFixed(0)}% of essays correctly (its{" "}
+          <Term id="accuracy">accuracy</Term>), and it flags
           every model essay written under the default, concise and persuasive instructions. Adding one sentence to the prompt, “write the essay as
           a 10th-grade student would”, produces essays that sit inside the learner range on every one of the five measures. Under that
           condition the detector catches {student.flagged === 0 ? "none" : `${student.flagged} of ${student.n}`} of them at the threshold

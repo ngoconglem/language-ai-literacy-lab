@@ -139,6 +139,44 @@ export default function Teach() {
         </p>
       </div>
 
+      <section className="prose">
+        <h2>First time teaching with it?</h2>
+        <p>
+          You do not need a background in corpus linguistics or statistics. Allow about 45 minutes to prepare a session for the first time:
+        </p>
+        <ol>
+          <li>
+            <strong>Walk the ten-minute route</strong> on the <a href="#">home page</a> yourself, with the Guidance switch on. The shaded boxes
+            explain every chart in the order students will meet it.
+          </li>
+          <li>
+            <strong>Read the glossary entries</strong> for the terms your session uses. For most sessions these are{" "}
+            <a href="#glossary/per-1000">per 1,000 words</a>, <a href="#glossary/strip-plot">strip plot</a>,{" "}
+            <a href="#glossary/keyness">keyness</a> and <a href="#glossary/concordance">concordance</a>; for the integrity workshop add{" "}
+            <a href="#glossary/threshold">threshold</a> and <a href="#glossary/false-positive">false positive</a>.
+          </li>
+          <li>
+            <strong>Do the lab you will set</strong>, all steps, and note your own answers to the reflection questions. There are no single
+            right answers; the questions are designed for discussion.
+          </li>
+          <li>
+            <strong>Check the room.</strong> The site works on any recent browser, needs no login and nothing to install. Test it once on the
+            classroom computer and on a phone.
+          </li>
+        </ol>
+        <h3>Explaining the big idea in two sentences</h3>
+        <p>
+          “Computers can count features of writing, such as word length or how often we hedge, much faster than we can. But a count only
+          describes a text; deciding what it means, and whether it says anything about the writer, is still our job.”
+        </p>
+        <h3>If students ask what a number means</h3>
+        <p>
+          Every measure has a plain-language definition: select its name on the Compare page or look it up in the{" "}
+          <a href="#glossary">glossary</a>. If a number seems surprising, the best move is always to open the text behind the dot and read it
+          together.
+        </p>
+      </section>
+
       <nav aria-label="Session plans">
         <ul className="index">
           {PLANS.map((p) => (
